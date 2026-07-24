@@ -19,6 +19,11 @@
   <span class="glow glow-1"></span>
   <span class="glow glow-2"></span>
   <span class="glow glow-3"></span>
+  <div class="ambient-waves">
+    <span class="ambient-wave ambient-wave-1"></span>
+    <span class="ambient-wave ambient-wave-2"></span>
+    <span class="ambient-wave ambient-wave-3"></span>
+  </div>
 </div>
 
 <div class="age-notice">Ovaj sadržaj namijenjen je osobama starijim od 18 godina. Pijte odgovorno.</div>
@@ -73,7 +78,6 @@
     <div class="section-heading">
       <span class="eyebrow">Vinoteka</span>
       <h2>Doživite bocu iz svakog kuta</h2>
-      <p style="color:var(--white-soft);max-width:560px;margin:0 auto;">Zarotirajte 3D model prstom ili mišem i pogledajte etiketu i oblik boce u punoj rezoluciji, u 360 stupnjeva.</p>
     </div>
     <div class="vinoteka-grid">
       <div class="vinoteka-card">
@@ -83,6 +87,7 @@
           alt="3D model boce Premium Graševina"
           camera-controls
           touch-action="pan-y"
+          disable-zoom
           auto-rotate
           auto-rotate-delay="1200"
           rotation-per-second="16deg"
@@ -95,6 +100,7 @@
         <div class="vinoteka-card-body">
           <span class="wine-type">Bijelo vino</span>
           <h3>Premium Graševina</h3>
+          <p class="vinoteka-instruction">Zarotirajte 3D model prstom ili mišem i pogledajte etiketu i oblik boce u punoj rezoluciji, u 360 stupnjeva.</p>
         </div>
       </div>
       <div class="vinoteka-card">
@@ -104,6 +110,7 @@
           alt="3D model boce Mystique"
           camera-controls
           touch-action="pan-y"
+          disable-zoom
           auto-rotate
           auto-rotate-delay="1200"
           rotation-per-second="16deg"
@@ -116,6 +123,7 @@
         <div class="vinoteka-card-body">
           <span class="wine-type">Crno vino</span>
           <h3>Mystique</h3>
+          <p class="vinoteka-instruction">Zarotirajte 3D model prstom ili mišem i pogledajte etiketu i oblik boce u punoj rezoluciji, u 360 stupnjeva.</p>
         </div>
       </div>
       <div class="vinoteka-card">
@@ -125,6 +133,7 @@
           alt="3D model boce Rosé"
           camera-controls
           touch-action="pan-y"
+          disable-zoom
           auto-rotate
           auto-rotate-delay="1200"
           rotation-per-second="16deg"
@@ -137,10 +146,10 @@
         <div class="vinoteka-card-body">
           <span class="wine-type">Rosé</span>
           <h3>Rosé</h3>
+          <p class="vinoteka-instruction">Zarotirajte 3D model prstom ili mišem i pogledajte etiketu i oblik boce u punoj rezoluciji, u 360 stupnjeva.</p>
         </div>
       </div>
     </div>
-    <p class="vinoteka-hint">Povuci za rotaciju &middot; Skroluj za zumiranje</p>
   </div>
 </section>
 
@@ -260,7 +269,7 @@
         </div>
       </div>
       <div class="wine-card" data-type="crno" id="mystique">
-        <div class="wine-image"><img src="images/wine-red.svg" alt="Mystique"></div>
+        <div class="wine-image"><img src="images/wine-mystique.png" alt="Mystique"></div>
         <div class="wine-body">
           <span class="wine-type">Crno vino</span>
           <h3>Mystique</h3>

@@ -11,5 +11,8 @@ u vina.html (sekcija id="vinoteka").
 
 Preporuke za same modele:
 - format: .glb (binarni glTF, samostalan fajl sa svim teksturama)
-- veličina do ~10-15 MB po modelu radi brzog učitavanja
+- veličina 2-3 MB po modelu (max) radi brzog učitavanja na mobitelu
+  - ako je izvorni model veći, komprimiraj ga alatom gltf-transform ili
+    gltfpack (Draco/Meshopt kompresija geometrije + smanjenje tekstura
+    na max 1024-2048px, format WebP/JPEG umjesto PNG gdje je moguće)
 - boca centrirana i skalirana tako da stane u odgovarajući "camera-orbit"

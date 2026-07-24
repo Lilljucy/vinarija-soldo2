@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Ambijentalni "mjehurići" u pozadini (placeholder dok ne stignu prave snimke vinograda)
-  var ambientGlow = document.querySelector('.ambient-glow');
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (ambientGlow && !reduceMotion) {
-    var bubbleCount = 22;
-    for (var b = 0; b < bubbleCount; b++) {
-      var bubble = document.createElement('span');
-      bubble.className = 'ambient-particle';
-      var size = (3 + Math.random() * 5).toFixed(1);
-      bubble.style.width = size + 'px';
-      bubble.style.height = size + 'px';
-      bubble.style.left = (Math.random() * 100) + '%';
-      bubble.style.animationDuration = (12 + Math.random() * 16) + 's';
-      bubble.style.animationDelay = (Math.random() * -20) + 's';
-      ambientGlow.appendChild(bubble);
-    }
-  }
-
   // Godina u footeru
   var yearEl = document.getElementById('year');
   if (yearEl) {

@@ -60,8 +60,8 @@
   --black: #0a0a0a;
   --black-soft: #151515;
   --black-card: #1b1b1b;
-  --gold: #c9a24b;
-  --gold-light: #e6cd8a;
+  --gold: #cbae7a;
+  --gold-light: #ecdec0;
   --white: #ffffff;
   --white-soft: #cfcfcf;
   --border-soft: rgba(201, 162, 75, 0.25);
@@ -133,34 +133,70 @@
   to { transform: translate(-4vw, 5vh) scale(0.9); }
 }
 
-.ambient-particle {
+.ambient-waves {
   position: absolute;
-  bottom: -12px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95), rgba(230,205,138,0.55) 40%, rgba(201,162,75,0.18) 72%, transparent 100%);
-  border: 1px solid rgba(230, 205, 138, 0.35);
-  box-shadow: 0 0 6px rgba(201, 162, 75, 0.25);
-  animation-name: bubble-rise;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34vh;
+  min-height: 190px;
+  overflow: hidden;
 }
 
-@keyframes bubble-rise {
-  0%   { transform: translate(0, 0); opacity: 0; }
-  8%   { opacity: 0.95; }
-  25%  { transform: translate(10px, -25vh); }
-  50%  { transform: translate(-9px, -50vh); }
-  75%  { transform: translate(11px, -75vh); }
-  92%  { opacity: 0.85; }
-  100% { transform: translate(-6px, -108vh); opacity: 0; }
+.ambient-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 50% 100%;
+  transform-origin: bottom center;
+}
+
+.ambient-wave-1 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,110 C100,150 200,70 300,110 C400,150 500,70 600,110 C700,150 800,70 900,110 C1000,150 1100,70 1200,110 L1200,200 L0,200 Z' fill='rgb(203,174,122)'/%3E%3C/svg%3E");
+  opacity: 0.2;
+  animation: wave-drift-1 16s linear infinite;
+}
+
+.ambient-wave-2 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,90 C133,150 266,30 400,90 C533,150 666,30 800,90 C933,150 1066,30 1200,90 L1200,200 L0,200 Z' fill='rgb(236,222,192)'/%3E%3C/svg%3E");
+  opacity: 0.14;
+  animation: wave-drift-2 24s linear infinite reverse;
+}
+
+.ambient-wave-3 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,120 C200,200 400,40 600,120 C800,200 1000,40 1200,120 L1200,200 L0,200 Z' fill='rgb(203,174,122)'/%3E%3C/svg%3E");
+  opacity: 0.1;
+  animation: wave-drift-3 34s linear infinite;
+}
+
+@keyframes wave-drift-1 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.06); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+@keyframes wave-drift-2 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.1); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+@keyframes wave-drift-3 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.04); }
+  100% { transform: translateX(-50%) scaleY(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ambient-glow .glow {
     animation: none;
   }
-  .ambient-particle {
-    display: none;
+  .ambient-wave {
+    animation: none;
   }
 }
 
@@ -494,6 +530,7 @@ nav.main-nav a.active::before {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero .hero-overlay {
@@ -528,6 +565,14 @@ nav.main-nav a.active::before {
   .hero-content {
     animation: none;
   }
+}
+
+.hero-content .hero-logo {
+  width: 96px;
+  height: auto;
+  margin: 0 auto 68px;
+  display: block;
+  filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
 }
 
 .hero-content .eyebrow {
@@ -746,6 +791,9 @@ section.alt {
 .wine-card .wine-image {
   background: var(--black-soft);
   padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wine-card .wine-image.photo {
@@ -878,7 +926,7 @@ section.alt {
 
 .vinoteka-card model-viewer {
   width: 100%;
-  height: 380px;
+  height: 550px;
   background: radial-gradient(circle at 50% 40%, rgba(201, 162, 75, 0.12) 0%, var(--black) 75%);
   --poster-color: transparent;
 }
@@ -905,12 +953,10 @@ section.alt {
   margin: 0;
 }
 
-.vinoteka-hint {
-  text-align: center;
-  margin: 32px 0 0;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.vinoteka-instruction {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: var(--white-soft);
 }
 
@@ -1224,11 +1270,18 @@ footer.site-footer {
   .hero-content h1 {
     font-size: 2.1rem;
   }
+  .hero-content .hero-logo {
+    width: 68px;
+    margin-bottom: 40px;
+  }
   .feature-grid, .wine-grid, .values-grid, .vinoteka-grid {
     grid-template-columns: 1fr;
   }
   .timeline-item {
     grid-template-columns: 80px 1fr;
+  }
+  .vinoteka-card model-viewer {
+    height: 400px;
   }
 }
 
