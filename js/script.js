@@ -106,24 +106,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Lightbox — uvećani prikaz slika proizvoda (npr. prednja/zadnja strana boce)
+  // Lightbox — prikaz slika proizvoda (npr. prednja/zadnja strana boce). Klik na sliku prebacuje na sljedeću u albumu.
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
   var lightboxClose = document.getElementById('lightbox-close');
-  var lightboxPrev = document.getElementById('lightbox-prev');
-  var lightboxNext = document.getElementById('lightbox-next');
-  if (lightbox && lightboxImg && lightboxClose && lightboxPrev && lightboxNext) {
+  if (lightbox && lightboxImg && lightboxClose) {
     var lightboxSrcs = [];
     var lightboxIndex = 0;
     var lightboxAlt = '';
 
     var renderLightboxImage = function () {
-      lightboxImg.classList.remove('zoomed');
       lightboxImg.src = lightboxSrcs[lightboxIndex];
       lightboxImg.alt = lightboxAlt;
-      var multi = lightboxSrcs.length > 1;
-      lightboxPrev.style.display = multi ? '' : 'none';
-      lightboxNext.style.display = multi ? '' : 'none';
     };
     var openLightbox = function (srcList, alt) {
       lightboxSrcs = srcList;
@@ -137,14 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
     };
-    var showNext = function () {
-      lightboxIndex = (lightboxIndex + 1) % lightboxSrcs.length;
-      renderLightboxImage();
-    };
-    var showPrev = function () {
-      lightboxIndex = (lightboxIndex - 1 + lightboxSrcs.length) % lightboxSrcs.length;
-      renderLightboxImage();
-    };
     document.querySelectorAll('[data-lightbox-images]').forEach(function (trigger) {
       trigger.addEventListener('click', function () {
         var srcList = trigger.getAttribute('data-lightbox-images').split(',').map(function (s) { return s.trim(); });
@@ -153,19 +139,15 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
     lightboxImg.addEventListener('click', function () {
-      lightboxImg.classList.toggle('zoomed');
+      lightboxIndex = (lightboxIndex + 1) % lightboxSrcs.length;
+      renderLightboxImage();
     });
-    lightboxPrev.addEventListener('click', showPrev);
-    lightboxNext.addEventListener('click', showNext);
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) closeLightbox();
     });
     document.addEventListener('keydown', function (e) {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
   }
 
