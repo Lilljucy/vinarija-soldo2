@@ -822,8 +822,14 @@
   }
 
   .footer-grid {
-    @apply grid gap-10 mb-10 max-[900px]:grid-cols-2;
-    grid-template-columns: 1.4fr 1fr 1fr;
+    @apply grid gap-10 mb-10;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
   }
 
   .footer-grid h4 {
@@ -876,6 +882,7 @@
         "ticker ticker ticker ticker";
       column-gap: 10px;
       row-gap: 10px;
+      align-items: center;
     }
     .nav-left {
       grid-area: left;
