@@ -397,6 +397,29 @@ nav.main-nav a.active::before {
   overflow: hidden;
 }
 
+.degustacija-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.degustacija-btn:hover,
+.degustacija-btn:focus-visible {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
 .whatsapp-btn {
   display: flex;
   align-items: center;
@@ -1215,5 +1238,20 @@ footer.site-footer {
   }
   .wine-ticker {
     display: none;
+  }
+  .nav-right {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .degustacija-btn {
+    padding: 8px 12px;
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
+  }
+  .whatsapp-btn {
+    width: 34px;
+    height: 34px;
   }
 }
