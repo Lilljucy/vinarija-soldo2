@@ -12,17 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
     navToggle.addEventListener('click', function () {
       mainNav.classList.toggle('open');
       navToggle.classList.toggle('open');
+      document.body.classList.toggle('nav-open', mainNav.classList.contains('open'));
     });
     mainNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mainNav.classList.remove('open');
         navToggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
       });
     });
     document.addEventListener('click', function (e) {
       if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
         mainNav.classList.remove('open');
         navToggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
       }
     });
   }

@@ -1412,6 +1412,11 @@ footer.site-footer {
     padding-top: 8px;
     border-top: 1px solid var(--border-soft);
   }
+
+  body.nav-open .wine-ticker {
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 420px) {
