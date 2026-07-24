@@ -1,0 +1,6 @@
+Preferiramo moderan, minimalistički dizajn.
+Uvijek koristi Tailwind CSS klase za stiliziranje (nemoj pisati običan CSS).
+Za sve ikone koristi isključivo paket 'lucide-react' (ili verziju za tvoj framework).
+Osiguraj da su svi dizajni responzivni (prilagođeni za mobitele i desktop).
+Koristi moderne palete boja (npr. slate, zinc ili neutral iz Tailwinda) s puno razmaka (padding/margin).
+Ako je dostupan shadcn/ui, koristi njegove komponente za gumbe, inpute i modale.

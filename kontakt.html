@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -42,10 +43,10 @@
       </nav>
     </div>
     <a href="index.html" class="logo">
-      <img src="images/logo-icon-gold.png" class="logo-mark" alt="Vinarija Soldo logo">
+      <span class="logo-mark gold-shine-mark" role="img" aria-label="Vinarija Soldo logo"></span>
       <span class="logo-text">
-        <img src="images/logo-word-soldo-gold.png" class="word-soldo" alt="Soldo">
-        <img src="images/logo-word-vinarija-gold.png" class="word-vinarija" alt="Vinarija">
+        <span class="word-soldo gold-shine-text">Soldo</span>
+        <span class="word-vinarija gold-shine-text">Vinarija</span>
       </span>
     </a>
     <div class="nav-right">
@@ -55,7 +56,7 @@
       </div>
       <a class="degustacija-btn" href="https://wa.me/385989544621?text=Pozdrav%21%20Zanima%20me%20zakazivanje%20degustacije." target="_blank" rel="noopener">Degustacija</a>
       <a class="whatsapp-btn" href="https://wa.me/385989544621?text=Pozdrav%21%20Zanima%20me%20naru%C4%91ba%20vina." target="_blank" rel="noopener" aria-label="Kontaktirajte nas na WhatsAppu">
-        <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.31.63 4.474 1.727 6.33L3 29l7.36-2.183a12.44 12.44 0 0 0 5.64 1.383h.001c6.905 0 12.499-5.596 12.499-12.5C28.5 8.596 22.906 3 16.001 3zm0 22.75h-.001a10.36 10.36 0 0 1-5.276-1.447l-.378-.224-4.368 1.296 1.318-4.256-.246-.39a10.34 10.34 0 0 1-1.6-5.529c0-5.734 4.667-10.4 10.402-10.4 5.734 0 10.4 4.666 10.4 10.4 0 5.735-4.666 10.55-10.251 10.55zm5.706-7.77c-.312-.156-1.845-.91-2.13-1.014-.286-.104-.494-.156-.702.156-.208.312-.806 1.014-.988 1.222-.182.208-.364.234-.676.078-.312-.156-1.317-.485-2.508-1.545-.927-.826-1.553-1.847-1.735-2.159-.182-.312-.02-.481.137-.636.14-.14.312-.364.468-.546.156-.182.208-.312.312-.52.104-.208.052-.39-.026-.546-.078-.156-.702-1.69-.962-2.315-.253-.608-.51-.526-.702-.536l-.598-.01c-.208 0-.546.078-.832.39-.286.312-1.09 1.066-1.09 2.6 0 1.534 1.116 3.016 1.272 3.224.156.208 2.196 3.354 5.322 4.703.744.321 1.324.513 1.777.657.746.237 1.425.203 1.962.123.598-.089 1.845-.755 2.105-1.484.26-.729.26-1.353.182-1.484-.078-.13-.286-.208-.598-.364z"/></svg>
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
       </a>
     </div>
   </div>
@@ -72,72 +73,48 @@
 </section>
 
 <section>
-  <div class="container contact-grid">
+  <div class="container contact-info-wrap">
     <div>
-      <span class="eyebrow" style="display:block;text-transform:uppercase;letter-spacing:3px;color:var(--gold);font-size:0.8rem;">Posjetite nas</span>
+      <span class="block uppercase tracking-[3px] text-gold text-[0.8rem] mb-2.5">Posjetite nas</span>
       <h2>Dođite na degustaciju</h2>
       <div class="divider"></div>
-      <p style="margin-bottom:36px;color:var(--white-soft);">Vinarija je otvorena za posjete uz prethodnu najavu. Organiziramo degustacije vina uz pogled na vinograde te obilaske podruma.</p>
+      <p class="mb-9 text-fog">Vinarija je otvorena za posjete uz prethodnu najavu. Organiziramo degustacije vina uz pogled na vinograde te obilaske podruma.</p>
 
       <div class="contact-info-item">
-        <img src="images/icon-map.svg" class="icon" alt="">
+        <i class="fa-solid fa-location-dot icon" aria-hidden="true"></i>
         <div>
           <h3>Adresa</h3>
           <p>Majdanska ul. 53, 34335, Vetovo</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <img src="images/icon-phone.svg" class="icon" alt="">
+        <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
         <div>
           <h3>Telefon</h3>
           <p>+385 98 954 4621</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <img src="images/icon-mail.svg" class="icon" alt="">
+        <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
         <div>
           <h3>E-mail</h3>
           <p>soldovina@gmail.com</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <img src="images/icon-barrel.svg" class="icon" alt="">
+        <i class="fa-solid fa-clock icon" aria-hidden="true"></i>
         <div>
           <h3>Radno vrijeme</h3>
           <p>Pon–Sub: 09:00–18:00 · Nedjeljom uz najavu</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <img src="images/icon-instagram.svg" class="icon" alt="">
+        <i class="fa-brands fa-instagram icon" aria-hidden="true"></i>
         <div>
           <h3>Instagram</h3>
           <p><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">@vinarija_soldo</a></p>
         </div>
       </div>
-    </div>
-
-    <div>
-      <form class="contact-form" id="contact-form">
-        <h3 style="margin-bottom:24px;">Pošaljite upit</h3>
-        <div class="form-row">
-          <label for="ime">Ime i prezime</label>
-          <input type="text" id="ime" name="ime" required>
-        </div>
-        <div class="form-row">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-row">
-          <label for="telefon">Telefon (nije obavezno)</label>
-          <input type="tel" id="telefon" name="telefon">
-        </div>
-        <div class="form-row">
-          <label for="poruka">Poruka</label>
-          <textarea id="poruka" name="poruka" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-dark">Pošalji poruku</button>
-        <p class="form-status" id="form-status"></p>
-      </form>
     </div>
   </div>
 
@@ -157,7 +134,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>Vinarija Soldo</h4>
+        <h4 class="gold-shine-text">Vinarija Soldo</h4>
         <p>Obiteljska vinarija posvećena tradiciji, kvaliteti i ljubavi prema vinogradarstvu.</p>
       </div>
       <div>
@@ -175,7 +152,7 @@
           <li>Majdanska ul. 53, 34335, Vetovo</li>
           <li>+385 98 954 4621</li>
           <li>soldovina@gmail.com</li>
-          <li><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" class="social-link"><img src="images/icon-instagram.svg" class="social-icon" alt="">@vinarija_soldo</a></li>
+          <li><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" class="social-link"><i class="fa-brands fa-instagram social-icon" aria-hidden="true"></i>@vinarija_soldo</a></li>
         </ul>
       </div>
     </div>

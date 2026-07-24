@@ -1,0 +1,899 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicBook.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicDemi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaCyrillicHeavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #151515;
+  --color-ink-card: #1b1b1b;
+  --color-gold: #cbae7a;
+  --color-gold-light: #ecdec0;
+  --color-gold-border: #c9a24b;
+  --color-fog: #cfcfcf;
+  --color-whatsapp: #25d366;
+
+  --font-sans: "Futura", "Futura PT", "Jost", "Century Gothic", sans-serif;
+
+  --shadow-soldo: 0 25px 60px -15px rgba(0, 0, 0, 0.55);
+  --shadow-gold: 0 20px 45px -12px rgba(203, 174, 122, 0.3);
+
+  --animate-drift1: drift1 34s ease-in-out infinite alternate;
+  --animate-drift2: drift2 28s ease-in-out infinite alternate;
+  --animate-drift3: drift3 40s ease-in-out infinite alternate;
+  --animate-wave1: wave-drift-1 16s linear infinite;
+  --animate-wave2: wave-drift-2 24s linear infinite reverse;
+  --animate-wave3: wave-drift-3 34s linear infinite;
+  --animate-hero-fade: hero-fade-in 1s ease both;
+  --animate-wine-pulse: wine-highlight-pulse 1.3s ease-out 2;
+}
+
+@keyframes drift1 {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(6vw, 8vh) scale(1.15); }
+}
+
+@keyframes drift2 {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-5vw, -6vh) scale(1.1); }
+}
+
+@keyframes drift3 {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-4vw, 5vh) scale(0.9); }
+}
+
+@keyframes wave-drift-1 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.06); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+@keyframes wave-drift-2 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.1); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+@keyframes wave-drift-3 {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-25%) scaleY(1.04); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wine-highlight-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0.55); }
+  70% { box-shadow: 0 0 0 22px rgba(201, 162, 75, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0); }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 font-sans font-normal text-white bg-ink leading-[1.7] antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans font-medium text-white m-0 mb-2 tracking-[0.5px];
+  }
+
+  p {
+    @apply m-0 mb-4 text-fog;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  img, svg {
+    @apply max-w-full block;
+  }
+
+  section {
+    @apply py-24 md:py-32;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+
+  /* Luksuzni zlatni metalik tekst — logo i istaknuti nazivi */
+  .gold-shine-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(115deg, #7a5c06 0%, #f9e8a2 15%, #b59410 32%, #fff6d8 48%, #8a6a08 65%, #f8e387 82%, #a67c0a 100%);
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.65));
+  }
+
+  /* Ista zlatna metalik obrada primijenjena na PNG logo-simbol (maskira oblik loga, puni ga gradijentom) */
+  .gold-shine-mark {
+    @apply inline-block bg-gold;
+    background-image: linear-gradient(115deg, #7a5c06 0%, #f9e8a2 15%, #b59410 32%, #fff6d8 48%, #8a6a08 65%, #f8e387 82%, #a67c0a 100%);
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+  }
+
+  .age-notice {
+    @apply bg-ink text-white text-center text-[0.82rem] py-2.5 px-5 tracking-[0.5px] border-b border-gold-border/25;
+  }
+
+  /* Pozadinske ambijentalne animacije */
+  .ambient-glow {
+    @apply fixed inset-0 z-0 overflow-hidden pointer-events-none;
+  }
+
+  .glow {
+    @apply absolute rounded-full blur-[80px] opacity-[0.16] will-change-transform;
+  }
+
+  .glow-1 {
+    @apply w-[46vw] h-[46vw] -top-[12%] -left-[10%] animate-drift1 motion-reduce:animate-none;
+    background: radial-gradient(circle, var(--color-gold) 0%, transparent 70%);
+  }
+
+  .glow-2 {
+    @apply w-[38vw] h-[38vw] -bottom-[14%] -right-[8%] animate-drift2 motion-reduce:animate-none;
+    background: radial-gradient(circle, var(--color-gold-light) 0%, transparent 70%);
+  }
+
+  .glow-3 {
+    @apply w-[30vw] h-[30vw] top-[38%] left-[55%] animate-drift3 motion-reduce:animate-none;
+    background: radial-gradient(circle, var(--color-gold) 0%, transparent 70%);
+  }
+
+  .ambient-waves {
+    @apply absolute left-0 right-0 bottom-0 h-[34vh] min-h-[190px] overflow-hidden;
+  }
+
+  .ambient-wave {
+    @apply absolute left-0 w-[200%] h-full bg-repeat-x;
+    bottom: -2px;
+    background-position: left bottom;
+    background-size: 50% 100%;
+    transform-origin: bottom center;
+  }
+
+  .ambient-wave-1 {
+    @apply opacity-20 animate-wave1 motion-reduce:animate-none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,110 C100,150 200,70 300,110 C400,150 500,70 600,110 C700,150 800,70 900,110 C1000,150 1100,70 1200,110 L1200,200 L0,200 Z' fill='rgb(203,174,122)'/%3E%3C/svg%3E");
+  }
+
+  .ambient-wave-2 {
+    @apply opacity-[0.14] animate-wave2 motion-reduce:animate-none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,90 C133,150 266,30 400,90 C533,150 666,30 800,90 C933,150 1066,30 1200,90 L1200,200 L0,200 Z' fill='rgb(236,222,192)'/%3E%3C/svg%3E");
+  }
+
+  .ambient-wave-3 {
+    @apply opacity-10 animate-wave3 motion-reduce:animate-none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0,120 C200,200 400,40 600,120 C800,200 1000,40 1200,120 L1200,200 L0,200 Z' fill='rgb(203,174,122)'/%3E%3C/svg%3E");
+  }
+
+  /* Header / Navigation */
+  .site-header {
+    @apply sticky top-0 z-[100] bg-ink/96 backdrop-blur-[6px] border-b border-gold-border/25;
+  }
+
+  .nav-wrap {
+    @apply grid gap-4 py-3.5 px-6 max-w-[1200px] mx-auto;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .nav-left {
+    @apply relative justify-self-start;
+  }
+
+  .logo {
+    @apply flex items-center gap-2.5 justify-self-center;
+  }
+
+  .logo .logo-mark {
+    @apply h-[42px] w-[22px];
+    -webkit-mask-image: url("../images/logo-icon-gold.png");
+    mask-image: url("../images/logo-icon-gold.png");
+  }
+
+  .logo .logo-text {
+    @apply flex flex-col gap-0.5 leading-none;
+  }
+
+  .logo .logo-text .word-soldo {
+    @apply text-xl font-semibold tracking-[1px];
+  }
+
+  .logo .logo-text .word-vinarija {
+    @apply text-[0.6rem] font-medium tracking-[3px] uppercase text-gold-light/80;
+  }
+
+  nav.main-nav {
+    @apply absolute min-w-[250px] bg-[rgba(14,14,14,0.92)] backdrop-blur-2xl border border-gold-border/30 rounded-3xl p-2.5 opacity-0 invisible pointer-events-none -translate-y-2.5 scale-96 origin-top-left max-[720px]:min-w-[240px];
+    top: calc(100% + 16px);
+    left: 0;
+    box-shadow: 0 26px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(201, 162, 75, 0.06) inset;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, visibility 0.35s;
+  }
+
+  nav.main-nav::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 28px;
+    width: 12px;
+    height: 12px;
+    background: inherit;
+    border-left: 1px solid rgba(201, 162, 75, 0.3);
+    border-top: 1px solid rgba(201, 162, 75, 0.3);
+    transform: rotate(45deg);
+    border-radius: 2px 0 0 0;
+  }
+
+  nav.main-nav.open {
+    @apply opacity-100 visible pointer-events-auto translate-y-0 scale-100;
+  }
+
+  nav.main-nav ul {
+    @apply relative list-none flex flex-col gap-0.5 m-0 p-0;
+  }
+
+  nav.main-nav a {
+    @apply flex items-center py-[13px] px-[18px] rounded-lg text-[0.82rem] font-medium tracking-[1.5px] uppercase text-fog relative overflow-hidden;
+    transition: color 0.25s ease, background 0.25s ease, padding-left 0.25s ease;
+  }
+
+  nav.main-nav a::before {
+    content: "";
+    @apply inline-block w-0 h-px mr-0 bg-gold-light;
+    transition: width 0.25s ease, margin-right 0.25s ease;
+  }
+
+  nav.main-nav a:hover,
+  nav.main-nav a.active {
+    @apply text-gold-light bg-gold/10 pl-[22px];
+  }
+
+  nav.main-nav a:hover::before,
+  nav.main-nav a.active::before {
+    @apply w-3 mr-2.5;
+  }
+
+  .nav-toggle {
+    @apply flex flex-col justify-center items-center gap-[5px] w-8 h-8 bg-transparent border-0 cursor-pointer p-0;
+  }
+
+  .nav-toggle span {
+    @apply block w-[22px] h-0.5 bg-gold;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    @apply translate-y-[7px] rotate-45;
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    @apply -translate-y-[7px] -rotate-45;
+  }
+
+  .nav-right {
+    @apply justify-self-end flex items-center gap-4;
+  }
+
+  .wine-ticker {
+    @apply text-right max-w-[220px] overflow-hidden;
+  }
+
+  .degustacija-btn {
+    @apply inline-flex items-center py-[9px] px-[18px] rounded-full border-[1.5px] border-gold text-gold-light text-[0.72rem] font-medium tracking-wide uppercase whitespace-nowrap flex-shrink-0 max-[420px]:py-2 max-[420px]:px-3 max-[420px]:text-[0.62rem] max-[420px]:tracking-[0.5px];
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+
+  .degustacija-btn:hover,
+  .degustacija-btn:focus-visible {
+    @apply bg-gold text-ink -translate-y-0.5;
+  }
+
+  .whatsapp-btn {
+    @apply flex items-center justify-center w-[38px] h-[38px] flex-shrink-0 rounded-full border border-gold-border/25 text-whatsapp bg-whatsapp/[0.08] max-[420px]:w-[34px] max-[420px]:h-[34px];
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+
+  .whatsapp-btn:hover,
+  .whatsapp-btn:focus-visible {
+    @apply border-whatsapp bg-whatsapp/[0.16] -translate-y-0.5;
+  }
+
+  .whatsapp-btn i {
+    @apply text-[1.05rem];
+  }
+
+  .wine-ticker .wine-ticker-label {
+    @apply block text-[0.65rem] tracking-[2px] uppercase text-fog mb-0.5;
+  }
+
+  .wine-ticker #wine-ticker-text {
+    @apply block font-sans font-medium tracking-[0.5px] text-base text-gold-light whitespace-nowrap overflow-hidden text-ellipsis opacity-100 translate-y-0 cursor-pointer;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .wine-ticker #wine-ticker-text.fade {
+    @apply opacity-0 translate-y-1.5;
+  }
+
+  .wine-ticker #wine-ticker-text:hover {
+    @apply text-gold underline underline-offset-[3px];
+  }
+
+  /* Hero */
+  .hero {
+    @apply relative text-white overflow-hidden;
+  }
+
+  .hero .hero-bg {
+    @apply absolute inset-0 w-full h-full object-cover z-0 pointer-events-none;
+  }
+
+  .hero .hero-overlay {
+    @apply absolute inset-0 z-[1];
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.65) 0%, rgba(10, 10, 10, 0.9) 100%);
+  }
+
+  .hero-content {
+    @apply relative z-[2] max-w-[1200px] mx-auto py-[140px] px-6 text-center animate-hero-fade motion-reduce:animate-none;
+  }
+
+  .hero-content .hero-logo {
+    @apply block w-24 mx-auto mb-[68px] max-[720px]:w-[68px] max-[720px]:mb-10;
+    height: calc(96px * 2767 / 1442);
+    -webkit-mask-image: url("../images/logo-icon-gold.png");
+    mask-image: url("../images/logo-icon-gold.png");
+  }
+
+  @media (max-width: 720px) {
+    .hero-content .hero-logo {
+      height: calc(68px * 2767 / 1442);
+    }
+  }
+
+  .hero-content .eyebrow {
+    @apply tracking-[4px] uppercase text-gold-light text-[0.85rem] mb-3.5;
+  }
+
+  .hero-content h1 {
+    @apply text-white text-[2.9rem] font-semibold tracking-[-0.5px] mb-5 max-[720px]:text-[2.1rem];
+  }
+
+  .hero-content p.lead {
+    @apply max-w-[560px] mx-auto mb-[30px] text-[1.15rem] text-fog;
+  }
+
+  .hero-buttons {
+    @apply flex flex-wrap justify-center gap-[18px];
+  }
+
+  .hero-buttons .btn {
+    @apply min-w-[220px] text-center;
+  }
+
+  .page-hero .hero-content {
+    @apply py-[90px] px-6;
+  }
+
+  .page-hero .hero-content h1 {
+    @apply text-[2.3rem] tracking-[-0.3px];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-block py-4 px-9 rounded-full text-[0.9rem] tracking-[1.5px] uppercase cursor-pointer border-2 border-transparent;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    @apply scale-[1.03] shadow-gold;
+  }
+
+  .btn-primary {
+    @apply bg-gold text-ink border-gold;
+  }
+
+  .btn-primary:hover {
+    @apply bg-transparent text-gold border-gold;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-white border-white;
+  }
+
+  .btn-outline:hover {
+    @apply bg-white text-ink;
+  }
+
+  .btn-dark {
+    @apply bg-transparent text-gold border-gold;
+  }
+
+  .btn-dark:hover {
+    @apply bg-gold text-ink;
+  }
+
+  /* Sections */
+  section.alt {
+    @apply bg-ink-soft;
+  }
+
+  .section-heading {
+    @apply text-center max-w-[640px] mx-auto mb-16;
+  }
+
+  .section-heading .eyebrow {
+    @apply block uppercase tracking-[3px] text-gold text-[0.8rem] mb-2.5;
+  }
+
+  .section-heading h2 {
+    @apply text-[2.1rem];
+  }
+
+  /* Intro / About preview grid */
+  .grid-2 {
+    @apply grid gap-[60px] items-center max-[900px]:grid-cols-1;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-2 .figure {
+    @apply rounded-3xl overflow-hidden shadow-soldo border border-gold-border/25;
+  }
+
+  .divider {
+    @apply w-[60px] h-[3px] bg-gold mt-[18px] mb-6;
+  }
+
+  /* Feature cards */
+  .feature-grid {
+    @apply grid grid-cols-3 gap-8 max-[900px]:grid-cols-2 max-[720px]:grid-cols-1;
+  }
+
+  .feature-card {
+    @apply bg-white/[0.03] backdrop-blur-xl rounded-3xl text-center py-10 px-8 shadow-soldo border-t-[3px] border-t-gold border-x border-x-white/10 border-b border-b-white/10;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+  }
+
+  .feature-card:hover {
+    @apply -translate-y-2 shadow-gold bg-white/[0.06];
+  }
+
+  .feature-card .icon {
+    @apply w-12 h-12 mx-auto mb-5 text-gold text-[2rem] flex items-center justify-center;
+  }
+
+  .feature-card h3 {
+    @apply text-[1.2rem];
+  }
+
+  /* Wine cards */
+  .wine-grid {
+    @apply grid grid-cols-3 gap-9 max-[900px]:grid-cols-2 max-[720px]:grid-cols-1;
+  }
+
+  .wine-card {
+    @apply bg-white/[0.03] backdrop-blur-xl rounded-3xl overflow-hidden shadow-soldo border border-white/10 flex flex-col;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .wine-card:hover {
+    @apply -translate-y-2 border-gold/60 shadow-gold;
+  }
+
+  .wine-card.wine-highlight {
+    @apply border-gold animate-wine-pulse motion-reduce:animate-none motion-reduce:shadow-[0_0_0_3px_rgba(201,162,75,0.6)];
+  }
+
+  .wine-card .wine-image.photo img {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+
+  .wine-card:hover .wine-image.photo img {
+    @apply scale-[1.06];
+  }
+
+  .wine-card .wine-image {
+    @apply bg-ink-soft p-[30px] flex items-center justify-center;
+  }
+
+  .wine-card .wine-image.photo {
+    @apply p-0 h-[280px] overflow-hidden;
+  }
+
+  .wine-card .wine-image.photo img {
+    @apply w-full h-full object-cover;
+  }
+
+  .wine-card .wine-image.bottle-photo {
+    @apply py-3.5 px-0 h-[280px] overflow-hidden;
+  }
+
+  .wine-card .wine-image.bottle-photo img {
+    @apply w-auto h-full object-contain transition-transform duration-500 ease-in-out;
+  }
+
+  .wine-card:hover .wine-image.bottle-photo img {
+    @apply scale-[1.06];
+  }
+
+  .wine-card .wine-body {
+    @apply pt-6 px-[26px] pb-[30px] flex-1 flex flex-col;
+  }
+
+  .wine-card .wine-type {
+    @apply text-[0.75rem] uppercase tracking-[2px] text-gold mb-2;
+  }
+
+  .wine-card h3 {
+    @apply text-[1.3rem] mb-2;
+  }
+
+  .wine-card .wine-meta {
+    @apply text-[0.85rem] text-fog mb-3.5;
+  }
+
+  .wine-card .price-list {
+    @apply list-none m-0 mb-3.5 pt-3 border-t border-gold-border/25;
+  }
+
+  .wine-card .price-list li {
+    @apply flex justify-between gap-3 text-[0.85rem] text-fog py-[3px];
+  }
+
+  .wine-card .price-list li span:last-child {
+    @apply text-gold-light font-bold whitespace-nowrap;
+  }
+
+  .wine-card .wine-price {
+    @apply text-[1.05rem] text-gold-light font-bold mb-2.5;
+  }
+
+  .wine-card p.desc {
+    @apply flex-1 text-fog text-[0.95rem];
+  }
+
+  /* Filters (Vina page) */
+  .wine-filters {
+    @apply flex justify-center gap-3.5 flex-wrap mb-12;
+  }
+
+  .wine-filters button {
+    @apply bg-transparent border border-gold-border/25 py-2.5 px-[22px] rounded-full font-[inherit] text-[0.85rem] tracking-wide uppercase cursor-pointer text-gold;
+    transition: all 0.2s ease;
+  }
+
+  .wine-filters button:hover {
+    @apply border-gold text-gold-light;
+  }
+
+  .wine-filters button.active {
+    @apply bg-gold border-gold text-ink;
+  }
+
+  /* Vinoteka */
+  .vinoteka-grid {
+    @apply grid grid-cols-3 gap-8 max-[900px]:grid-cols-2 max-[720px]:grid-cols-1;
+  }
+
+  .vinoteka-card {
+    @apply bg-white/[0.03] backdrop-blur-xl rounded-3xl overflow-hidden shadow-soldo border border-white/10;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .vinoteka-card:hover {
+    @apply -translate-y-2 border-gold/60 shadow-gold;
+  }
+
+  .vinoteka-image {
+    @apply w-full h-[480px] overflow-hidden max-[720px]:h-[400px];
+    background: radial-gradient(circle at 50% 40%, rgba(201, 162, 75, 0.12) 0%, var(--color-ink) 75%);
+  }
+
+  .vinoteka-image img {
+    @apply w-full h-full object-cover transition-transform duration-500 ease-in-out;
+  }
+
+  .vinoteka-card:hover .vinoteka-image img {
+    @apply scale-[1.05];
+  }
+
+  [data-lightbox-images] {
+    @apply cursor-pointer;
+  }
+
+  .vinoteka-card-body {
+    @apply py-4 px-6 text-center border-t border-gold-border/25;
+  }
+
+  .vinoteka-card-body h3 {
+    @apply text-[1.1rem] m-0;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    @apply hidden fixed inset-0 z-[100] bg-ink/92 py-[60px] px-6 overflow-y-auto overflow-x-hidden max-[640px]:pt-[70px] max-[640px]:px-4 max-[640px]:pb-6;
+  }
+
+  .lightbox.open {
+    @apply flex items-center justify-center;
+  }
+
+  .lightbox-content {
+    @apply relative max-w-[560px] w-full;
+  }
+
+  .lightbox-images {
+    @apply flex justify-center;
+  }
+
+  .lightbox-images img {
+    @apply max-w-[480px] w-full h-auto rounded-2xl shadow-soldo cursor-pointer;
+  }
+
+  .lightbox-close {
+    @apply absolute -top-12 right-0 bg-transparent border-2 border-white text-white w-10 h-10 rounded-full text-[1.3rem] leading-none cursor-pointer max-[640px]:-top-[46px];
+    transition: all 0.25s ease;
+  }
+
+  .lightbox-close:hover {
+    @apply bg-white text-ink;
+  }
+
+  /* Instagram sekcija */
+  .instagram-grid {
+    @apply grid grid-cols-3 gap-5;
+  }
+
+  .instagram-tile {
+    @apply relative block aspect-square overflow-hidden rounded-2xl border border-gold-border/25;
+  }
+
+  .instagram-tile img:first-child {
+    @apply w-full h-full object-cover transition-transform duration-500 ease-in-out;
+  }
+
+  .instagram-tile-overlay {
+    @apply absolute inset-0 flex items-center justify-center bg-ink/55 opacity-0 transition-opacity duration-300 ease-in-out;
+  }
+
+  .instagram-tile-overlay i {
+    @apply text-[2rem] text-white;
+  }
+
+  .instagram-tile:hover img:first-child {
+    @apply scale-[1.08];
+  }
+
+  .instagram-tile:hover .instagram-tile-overlay {
+    @apply opacity-100;
+  }
+
+  /* Quote / story block */
+  .quote-block {
+    @apply text-center max-w-[760px] mx-auto;
+  }
+
+  .quote-block blockquote {
+    @apply text-[1.6rem] italic text-white m-0 mb-5;
+  }
+
+  .quote-block cite {
+    @apply not-italic text-gold tracking-wide uppercase text-[0.85rem];
+  }
+
+  /* Timeline (O nama) */
+  .timeline {
+    @apply max-w-[760px] mx-auto;
+  }
+
+  .timeline-item {
+    @apply grid gap-6 py-6 border-b border-gold-border/25 max-[720px]:[grid-template-columns:80px_1fr];
+    grid-template-columns: 110px 1fr;
+  }
+
+  .timeline-item:last-child {
+    @apply border-b-0;
+  }
+
+  .timeline-item .year {
+    @apply text-[1.4rem] text-gold font-bold;
+  }
+
+  /* Values grid */
+  .values-grid {
+    @apply grid grid-cols-4 gap-6 text-center max-[900px]:grid-cols-2 max-[720px]:grid-cols-1;
+  }
+
+  .values-grid .value-icon {
+    @apply mx-auto mb-3.5 text-gold text-[2.2rem] flex items-center justify-center;
+  }
+
+  /* Contact page */
+  .contact-info-wrap {
+    @apply max-w-[640px] mx-auto;
+  }
+
+  .contact-info-item {
+    @apply flex gap-4 mb-7;
+  }
+
+  .contact-info-item .icon {
+    @apply w-[26px] flex-shrink-0 mt-1 text-gold text-[1.4rem] flex items-center justify-center;
+  }
+
+  .contact-info-item h3 {
+    @apply text-base mb-1 text-gold;
+  }
+
+  .contact-info-item p {
+    @apply text-fog m-0;
+  }
+
+  .map-embed {
+    @apply rounded-3xl overflow-hidden shadow-soldo mt-10 border border-gold-border/25;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    @apply bg-ink-soft text-fog pt-[60px] pb-6 border-t border-gold-border/25;
+  }
+
+  .footer-grid {
+    @apply grid gap-10 mb-10 max-[900px]:grid-cols-2;
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer-grid h4 {
+    @apply text-gold-light text-base uppercase tracking-[1.5px];
+  }
+
+  .footer-grid p, .footer-grid a {
+    @apply text-fog text-[0.92rem];
+  }
+
+  .footer-grid ul {
+    @apply list-none p-0 m-0;
+  }
+
+  .footer-grid ul li {
+    @apply mb-2.5;
+  }
+
+  .footer-grid ul a:hover {
+    @apply text-gold-light;
+  }
+
+  .social-link {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .social-icon {
+    @apply text-[0.95rem];
+  }
+
+  .footer-bottom {
+    @apply border-t border-gold-border/25 pt-[22px] text-center text-[0.82rem] text-fog;
+  }
+
+  /* Animacije pri skrolanju */
+  .reveal {
+    @apply opacity-0 translate-y-7 transition-[opacity,transform] duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none;
+  }
+
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Responsive — mobilni izbornik u zaglavlju */
+  @media (max-width: 640px) {
+    .nav-wrap {
+      grid-template-columns: auto 1fr auto auto;
+      grid-template-areas:
+        "left logo degustacija whatsapp"
+        "ticker ticker ticker ticker";
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+    .nav-left {
+      grid-area: left;
+    }
+    .logo {
+      grid-area: logo;
+    }
+    .nav-right {
+      display: contents;
+    }
+    .degustacija-btn {
+      grid-area: degustacija;
+      justify-self: end;
+    }
+    .whatsapp-btn {
+      grid-area: whatsapp;
+      justify-self: end;
+    }
+    .wine-ticker {
+      grid-area: ticker;
+      max-width: none;
+      text-align: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(201, 162, 75, 0.25);
+    }
+    body.nav-open .wine-ticker {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}

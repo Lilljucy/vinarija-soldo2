@@ -97,18 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
   jumpToWineFromHash();
   window.addEventListener('hashchange', jumpToWineFromHash);
 
-  // Kontakt forma (bez backenda - samo potvrda)
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var status = document.getElementById('form-status');
-      status.textContent = 'Hvala na poruci! Javit ćemo vam se u najkraćem mogućem roku.';
-      status.classList.add('visible');
-      contactForm.reset();
-    });
-  }
-
   // Lightbox — prikaz slika proizvoda (npr. prednja/zadnja strana boce). Klik na sliku prebacuje na sljedeću u albumu.
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
@@ -158,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var revealSelectors = [
     '.section-heading', '.wine-card', '.vinoteka-card', '.feature-card', '.timeline-item',
     '.values-grid > div', '.grid-2 > div', '.contact-info-item',
-    '.contact-form', '.quote-block', '.map-embed', '.instagram-tile'
+    '.quote-block', '.map-embed', '.instagram-tile'
   ];
   var revealEls = document.querySelectorAll(revealSelectors.join(', '));
 
