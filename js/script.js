@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Rotirajući prikaz sorti vina u zaglavlju
+  // Rotirajući prikaz sorti vina u zaglavlju — klik vodi na taj proizvod u Vinoteci
   var wineTicker = document.getElementById('wine-ticker-text');
   if (wineTicker) {
     var wineNames = [
@@ -53,12 +53,18 @@ document.addEventListener('DOMContentLoaded', function () {
       'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvee', 'Merlot',
       'Mystique', 'Rosé', 'Pjenušac Chardonnay'
     ];
+    var wineSlugs = [
+      'grasevina', 'rizvanac', 'manzoni', 'johaniter', 'chardonnay',
+      'sauvignon', 'mirisni-traminac', 'vetovo-cuvee', 'merlot',
+      'mystique', 'rose', 'pjenusac-chardonnay'
+    ];
     var wineIndex = 0;
     setInterval(function () {
       wineTicker.classList.add('fade');
       setTimeout(function () {
         wineIndex = (wineIndex + 1) % wineNames.length;
         wineTicker.textContent = wineNames[wineIndex];
+        wineTicker.setAttribute('href', 'vina.html#' + wineSlugs[wineIndex]);
         wineTicker.classList.remove('fade');
       }, 350);
     }, 2600);
@@ -81,6 +87,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Skrolanje i isticanje vina kad se stigne preko linka iz zaglavlja (npr. vina.html#grasevina)
+  function jumpToWineFromHash() {
+    if (!location.hash) return;
+    var target;
+    try {
+      target = document.querySelector(location.hash);
+    } catch (err) {
+      return;
+    }
+    if (!target || !target.classList.contains('wine-card')) return;
+
+    var allFilterBtn = document.querySelector('.wine-filters button[data-filter="sve"]');
+    if (allFilterBtn && !allFilterBtn.classList.contains('active')) {
+      allFilterBtn.click();
+    }
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.classList.add('wine-highlight');
+    setTimeout(function () {
+      target.classList.remove('wine-highlight');
+    }, 2600);
+  }
+  jumpToWineFromHash();
+  window.addEventListener('hashchange', jumpToWineFromHash);
+
   // Kontakt forma (bez backenda - samo potvrda)
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
@@ -95,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Animacije pri skrolanju
   var revealSelectors = [
-    '.section-heading', '.wine-card', '.feature-card', '.timeline-item',
+    '.section-heading', '.wine-card', '.vinoteka-card', '.feature-card', '.timeline-item',
     '.values-grid > div', '.grid-2 > div', '.contact-info-item',
     '.contact-form', '.quote-block', '.map-embed', '.instagram-tile'
   ];
