@@ -106,6 +106,69 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Lightbox — uvećani prikaz slika proizvoda (npr. prednja/zadnja strana boce)
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var lightboxPrev = document.getElementById('lightbox-prev');
+  var lightboxNext = document.getElementById('lightbox-next');
+  if (lightbox && lightboxImg && lightboxClose && lightboxPrev && lightboxNext) {
+    var lightboxSrcs = [];
+    var lightboxIndex = 0;
+    var lightboxAlt = '';
+
+    var renderLightboxImage = function () {
+      lightboxImg.classList.remove('zoomed');
+      lightboxImg.src = lightboxSrcs[lightboxIndex];
+      lightboxImg.alt = lightboxAlt;
+      var multi = lightboxSrcs.length > 1;
+      lightboxPrev.style.display = multi ? '' : 'none';
+      lightboxNext.style.display = multi ? '' : 'none';
+    };
+    var openLightbox = function (srcList, alt) {
+      lightboxSrcs = srcList;
+      lightboxIndex = 0;
+      lightboxAlt = alt;
+      renderLightboxImage();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    var closeLightbox = function () {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    var showNext = function () {
+      lightboxIndex = (lightboxIndex + 1) % lightboxSrcs.length;
+      renderLightboxImage();
+    };
+    var showPrev = function () {
+      lightboxIndex = (lightboxIndex - 1 + lightboxSrcs.length) % lightboxSrcs.length;
+      renderLightboxImage();
+    };
+    document.querySelectorAll('[data-lightbox-images]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var srcList = trigger.getAttribute('data-lightbox-images').split(',').map(function (s) { return s.trim(); });
+        var imgEl = trigger.querySelector('img');
+        openLightbox(srcList, imgEl ? imgEl.alt : '');
+      });
+    });
+    lightboxImg.addEventListener('click', function () {
+      lightboxImg.classList.toggle('zoomed');
+    });
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+  }
+
   // Animacije pri skrolanju
   var revealSelectors = [
     '.section-heading', '.wine-card', '.vinoteka-card', '.feature-card', '.timeline-item',
