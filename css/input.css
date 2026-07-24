@@ -56,6 +56,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Bizantheum";
+  src: url("../fonts/bizantheum-8m2d2.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-ink: #0a0a0a;
   --color-ink-soft: #151515;
@@ -255,7 +263,7 @@
   }
 
   .logo .logo-mark {
-    @apply h-[42px] w-[22px];
+    @apply h-[52px] w-[27px];
     -webkit-mask-image: url("../images/logo-icon-gold.png");
     mask-image: url("../images/logo-icon-gold.png");
   }
@@ -265,11 +273,13 @@
   }
 
   .logo .logo-text .word-soldo {
-    @apply text-xl font-semibold tracking-[1px];
+    @apply text-2xl tracking-[1px];
+    font-family: "Bizantheum", serif;
   }
 
   .logo .logo-text .word-vinarija {
-    @apply text-[0.6rem] font-medium tracking-[3px] uppercase text-gold-light/80;
+    @apply text-[0.7rem] tracking-[3px] uppercase text-gold-light/80;
+    font-family: "Bizantheum", serif;
   }
 
   nav.main-nav {
