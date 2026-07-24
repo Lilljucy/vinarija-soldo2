@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -Force \"$env:USERPROFILE\\\\Desktop\\\\Vinarija soldo web\" -ErrorAction SilentlyContinue | Select-Object FullName, Length, LastWriteTime)",
+      "PowerShell(Get-Command chromium-cli -ErrorAction SilentlyContinue)",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(py --version 2>&1)",
+      "PowerShell(Get-Command node -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npx -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\index.html\")"
+    ]
+  }
+}

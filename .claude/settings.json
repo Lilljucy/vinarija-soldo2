@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Remove-Item -LiteralPath \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\images\\\\logo-raster-hq.png\" -Force -Confirm:$false)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\images\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object Name)",
+      "PowerShell(Remove-Item -LiteralPath \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\images\\\\logo-mark.svg\" -Force -Confirm:$false)",
+      "PowerShell(Remove-Item -LiteralPath \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\images\\\\hero-vineyard.svg\" -Force -Confirm:$false)",
+      "PowerShell(Remove-Item -LiteralPath \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\images\\\\about-winery.svg\" -Force -Confirm:$false)",
+      "PowerShell(\"cleaned\")",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\lukam\\\\vinarija-soldo\\\\vina.html\")",
+      "Read(//temp/readonly/**)",
+      "Read(//c/temp/readonly/**)",
+      "PowerShell(Get-ChildItem -Force \"$env:USERPROFILE\\\\Desktop\\\\Vinarija soldo web\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-ChildItem -Force \"$env:USERPROFILE\\\\Desktop\" | Where-Object { $_.Name -match \"futura\" } | Select-Object FullName, Length, LastWriteTime, PSIsContainer)"
+    ]
+  }
+}

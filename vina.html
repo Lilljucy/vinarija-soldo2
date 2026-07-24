@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vina — Vinarija Soldo</title>
+<meta name="description" content="Pregledajte ponudu vina vinarije Soldo — bijela, crna, rosé i pjenušava vina.">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="age-notice">Ovaj sadržaj namijenjen je osobama starijim od 18 godina. Pijte odgovorno.</div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Otvori izbornik">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="vina.html" class="active">Vina</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img src="images/logo-icon-gold.png" class="logo-mark" alt="Vinarija Soldo logo">
+      <span class="logo-text">
+        <img src="images/logo-word-soldo-gold.png" class="word-soldo" alt="Soldo">
+        <img src="images/logo-word-vinarija-gold.png" class="word-vinarija" alt="Vinarija">
+      </span>
+    </a>
+    <div class="wine-ticker" aria-hidden="true">
+      <span class="wine-ticker-label">Nudimo</span>
+      <span id="wine-ticker-text">Graševina</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero page-hero">
+  <img src="images/wine-photo-rose.jpeg" class="hero-bg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Naš podrum</span>
+    <h1>Ponuda vina</h1>
+    <p class="lead">Od snažnih crnih vina do svježih bijelih i rosé — svako vino priča svoju priču.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="wine-filters">
+      <button class="active" data-filter="sve">Sve</button>
+      <button data-filter="bijelo">Bijela vina</button>
+      <button data-filter="crno">Crna vina</button>
+      <button data-filter="rose">Rosé</button>
+      <button data-filter="pjenusac">Pjenušava vina</button>
+    </div>
+
+    <div class="wine-grid" id="wine-grid">
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image photo"><img src="images/wine-photo-hero.jpeg" alt="Graševina"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Graševina</h3>
+          <ul class="price-list">
+            <li><span>1 L</span><span>4,50 € + PDV</span></li>
+            <li><span>Rinfuza</span><span>3,50 € + PDV</span></li>
+            <li><span>0,75 L (navoj)</span><span>5,00 € + PDV</span></li>
+            <li><span>0,75 L (pluto)</span><span>6,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Naša najprepoznatljivija sorta — svježe, lagano vino s notama zelene jabuke i bijelog cvijeta.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Rizvanac"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Rizvanac</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>5,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Aromatično i blago vino nježnih cvjetnih tonova, ugodne kiselosti.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Manzoni"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Manzoni</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>6,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Punije, strukturirano bijelo vino s notama zrele breskve i badema.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Johaniter"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Johaniter</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>6,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Suho, aromatično vino s prepoznatljivom svježinom i notama agruma.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Chardonnay"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Chardonnay</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>6,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Elegantno vino nota citrusa i maslaca, blago zaobljeno na nepcu.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Sauvignon"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Sauvignon</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>7,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Živahno i travnato, s prepoznatljivim aromama agruma i zelene paprike.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo">
+        <div class="wine-image"><img src="images/wine-white.svg" alt="Mirisni Traminac"></div>
+        <div class="wine-body">
+          <span class="wine-type">Bijelo vino</span>
+          <h3>Mirisni Traminac</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>7,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Izrazito aromatično vino nota liči, ružinih latica i egzotičnog voća.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno">
+        <div class="wine-image"><img src="images/wine-red.svg" alt="Vetovo Cuvee"></div>
+        <div class="wine-body">
+          <span class="wine-type">Crno vino</span>
+          <h3>Vetovo Cuvee</h3>
+          <ul class="price-list">
+            <li><span>1 L</span><span>4,50 € + PDV</span></li>
+            <li><span>Rinfuza</span><span>3,50 € + PDV</span></li>
+            <li><span>0,75 L (navoj)</span><span>5,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Naša autorska kupaža crnih sorti — meko i okruglo, s notama crnog voća.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno">
+        <div class="wine-image"><img src="images/wine-red.svg" alt="Merlot"></div>
+        <div class="wine-body">
+          <span class="wine-type">Crno vino</span>
+          <h3>Merlot</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>7,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Mekano vino zaobljenih tanina, s notama šljive i crvenog voća.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno">
+        <div class="wine-image"><img src="images/wine-red.svg" alt="Mystique"></div>
+        <div class="wine-body">
+          <span class="wine-type">Crno vino</span>
+          <h3>Mystique</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>8,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Naše najintrigantnije crno vino — slojevito, s notama tamnih bobica i začina.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="rose">
+        <div class="wine-image photo"><img src="images/wine-photo-rose.jpeg" alt="Rosé"></div>
+        <div class="wine-body">
+          <span class="wine-type">Rosé</span>
+          <h3>Rosé</h3>
+          <ul class="price-list">
+            <li><span>0,75 L (navoj)</span><span>6,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Osvježavajuće rosé vino nota jagode i divlje ruže, idealno za ljetne dane.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="pjenusac">
+        <div class="wine-image"><img src="images/wine-sparkling.svg" alt="Pjenušac Chardonnay"></div>
+        <div class="wine-body">
+          <span class="wine-type">Pjenušavo vino</span>
+          <h3>Pjenušac Chardonnay</h3>
+          <ul class="price-list">
+            <li><span>Berba 2022.</span><span>15,00 € + PDV</span></li>
+          </ul>
+          <p class="desc">Fino perlanje i svježe arome jabuke i citrusa — savršeno za svečane trenutke.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container quote-block">
+    <blockquote>"Svaka boca čuva okus sunca i kamena s naših vinograda."</blockquote>
+    <cite>Obitelj Soldo</cite>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Vinarija Soldo</h4>
+        <p>Obiteljska vinarija posvećena tradiciji, kvaliteti i ljubavi prema vinogradarstvu.</p>
+      </div>
+      <div>
+        <h4>Navigacija</h4>
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="vina.html">Vina</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Majdanska ul. 53, 34335, Vetovo</li>
+          <li>+385 98 954 4621</li>
+          <li>soldovina@gmail.com</li>
+          <li><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" class="social-link"><img src="images/icon-instagram.svg" class="social-icon" alt="">@vinarija_soldo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

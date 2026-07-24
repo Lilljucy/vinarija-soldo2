@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — Vinarija Soldo</title>
+<meta name="description" content="Kontaktirajte vinariju Soldo za posjete, degustacije i narudžbe vina.">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="age-notice">Ovaj sadržaj namijenjen je osobama starijim od 18 godina. Pijte odgovorno.</div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Otvori izbornik">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="vina.html">Vina</a></li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img src="images/logo-icon-gold.png" class="logo-mark" alt="Vinarija Soldo logo">
+      <span class="logo-text">
+        <img src="images/logo-word-soldo-gold.png" class="word-soldo" alt="Soldo">
+        <img src="images/logo-word-vinarija-gold.png" class="word-vinarija" alt="Vinarija">
+      </span>
+    </a>
+    <div class="wine-ticker" aria-hidden="true">
+      <span class="wine-ticker-label">Nudimo</span>
+      <span id="wine-ticker-text">Graševina</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero page-hero">
+  <img src="images/wine-photo-hero.jpeg" class="hero-bg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Javite nam se</span>
+    <h1>Kontakt</h1>
+    <p class="lead">Rado ćemo vas ugostiti na degustaciji ili odgovoriti na vaš upit.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow" style="display:block;text-transform:uppercase;letter-spacing:3px;color:var(--gold);font-size:0.8rem;">Posjetite nas</span>
+      <h2>Dođite na degustaciju</h2>
+      <div class="divider"></div>
+      <p style="margin-bottom:36px;color:var(--white-soft);">Vinarija je otvorena za posjete uz prethodnu najavu. Organiziramo degustacije vina uz pogled na vinograde te obilaske podruma.</p>
+
+      <div class="contact-info-item">
+        <img src="images/icon-map.svg" class="icon" alt="">
+        <div>
+          <h3>Adresa</h3>
+          <p>Majdanska ul. 53, 34335, Vetovo</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <img src="images/icon-phone.svg" class="icon" alt="">
+        <div>
+          <h3>Telefon</h3>
+          <p>+385 98 954 4621</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <img src="images/icon-mail.svg" class="icon" alt="">
+        <div>
+          <h3>E-mail</h3>
+          <p>soldovina@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <img src="images/icon-barrel.svg" class="icon" alt="">
+        <div>
+          <h3>Radno vrijeme</h3>
+          <p>Pon–Sub: 09:00–18:00 · Nedjeljom uz najavu</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <img src="images/icon-instagram.svg" class="icon" alt="">
+        <div>
+          <h3>Instagram</h3>
+          <p><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">@vinarija_soldo</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form class="contact-form" id="contact-form">
+        <h3 style="margin-bottom:24px;">Pošaljite upit</h3>
+        <div class="form-row">
+          <label for="ime">Ime i prezime</label>
+          <input type="text" id="ime" name="ime" required>
+        </div>
+        <div class="form-row">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="telefon">Telefon (nije obavezno)</label>
+          <input type="tel" id="telefon" name="telefon">
+        </div>
+        <div class="form-row">
+          <label for="poruka">Poruka</label>
+          <textarea id="poruka" name="poruka" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Pošalji poruku</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=Majdanska+ul.+53,+34335+Vetovo,+Hrvatska&output=embed"
+        width="100%" height="380" style="border:0;" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokacija vinarije Soldo">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Vinarija Soldo</h4>
+        <p>Obiteljska vinarija posvećena tradiciji, kvaliteti i ljubavi prema vinogradarstvu.</p>
+      </div>
+      <div>
+        <h4>Navigacija</h4>
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="vina.html">Vina</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Majdanska ul. 53, 34335, Vetovo</li>
+          <li>+385 98 954 4621</li>
+          <li>soldovina@gmail.com</li>
+          <li><a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" class="social-link"><img src="images/icon-instagram.svg" class="social-icon" alt="">@vinarija_soldo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
