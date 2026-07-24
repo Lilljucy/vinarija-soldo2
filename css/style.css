@@ -1381,13 +1381,36 @@ footer.site-footer {
 
 @media (max-width: 640px) {
   .nav-wrap {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas:
+      "left logo degustacija whatsapp"
+      "ticker ticker ticker ticker";
+    column-gap: 10px;
+    row-gap: 10px;
   }
-  .wine-ticker {
-    display: none;
+  .nav-left {
+    grid-area: left;
+  }
+  .logo {
+    grid-area: logo;
   }
   .nav-right {
-    gap: 10px;
+    display: contents;
+  }
+  .degustacija-btn {
+    grid-area: degustacija;
+    justify-self: end;
+  }
+  .whatsapp-btn {
+    grid-area: whatsapp;
+    justify-self: end;
+  }
+  .wine-ticker {
+    grid-area: ticker;
+    max-width: none;
+    text-align: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-soft);
   }
 }
 
