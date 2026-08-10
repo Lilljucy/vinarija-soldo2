@@ -998,6 +998,35 @@
     @apply rounded-3xl overflow-hidden shadow-soldo mt-10 border border-gold-border/25;
   }
 
+  /* Contact hero — full-bleed photo with centered fields (Privios-style) */
+  .contact-hero {
+    @apply relative flex items-center justify-center text-center min-h-[80vh] max-[720px]:min-h-[70vh];
+  }
+
+  .contact-fields {
+    @apply relative z-[2] flex flex-col items-center gap-9;
+  }
+
+  .contact-field .field-label {
+    @apply block uppercase tracking-[3px] text-gold-light/70 text-[0.8rem] mb-2.5;
+  }
+
+  .contact-field .field-value {
+    @apply text-white text-[1.15rem] m-0;
+  }
+
+  .contact-field .field-value a:hover {
+    @apply text-gold-light;
+  }
+
+  .map-full {
+    @apply w-full h-[420px] max-[720px]:h-[320px] border-t border-gold-border/25;
+  }
+
+  .map-full iframe {
+    @apply w-full h-full block;
+  }
+
   /* Footer */
   footer.site-footer {
     @apply pt-[60px] pb-6 border-t border-gold-border/25;

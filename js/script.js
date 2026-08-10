@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Animacije pri skrolanju
   var revealSelectors = [
     '.section-heading', '.wine-card', '.vinoteka-card', '.feature-card', '.timeline-item',
-    '.values-grid > div', '.grid-2 > div', '.contact-info-item',
-    '.quote-block', '.map-embed', '.instagram-tile', '.visit-band > div'
+    '.values-grid > div', '.grid-2 > div', '.contact-info-item', '.contact-field',
+    '.quote-block', '.map-embed', '.map-full', '.instagram-tile', '.visit-band > div'
   ];
   var revealEls = document.querySelectorAll(revealSelectors.join(', '));
 
