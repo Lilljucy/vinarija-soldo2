@@ -479,7 +479,11 @@
   }
 
   .grid-2 .figure {
-    @apply rounded-3xl overflow-hidden shadow-soldo border border-gold-border/25;
+    @apply rounded-3xl overflow-hidden shadow-soldo border border-gold-border/25 h-[380px] max-[900px]:h-[320px] min-[900px]:max-w-[480px];
+  }
+
+  .grid-2 .figure img {
+    @apply w-full h-full object-cover;
   }
 
   .divider {
@@ -541,7 +545,11 @@
 
   /* Decorative offset frame behind photos (light sections) */
   .figure-frame {
-    @apply relative;
+    @apply relative min-[900px]:w-fit;
+  }
+
+  .story-grid {
+    @apply min-[900px]:[grid-template-columns:auto_1fr];
   }
 
   .figure-frame::before {
