@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var revealSelectors = [
     '.section-heading', '.wine-card', '.vinoteka-card', '.feature-card', '.timeline-item',
     '.values-grid > div', '.grid-2 > div', '.contact-info-item',
-    '.quote-block', '.map-embed', '.instagram-tile'
+    '.quote-block', '.map-embed', '.instagram-tile', '.visit-band > div'
   ];
   var revealEls = document.querySelectorAll(revealSelectors.join(', '));
 
