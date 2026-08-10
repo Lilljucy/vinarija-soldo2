@@ -12,7 +12,17 @@
 <link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <span class="logo-mark"></span>
+  </div>
+  <p class="age-gate-question">Jeste li stariji od 18 godina?</p>
+  <button type="button" class="age-gate-yes" id="age-gate-yes">Da, uđi</button>
+  <a href="https://www.google.com" class="age-gate-no">Ne</a>
+  <p class="age-gate-disclaimer">Pritiskom na gumb potvrđujete da ste punoljetni prema zakonima vaše zemlje. Ova stranica sadrži informacije o alkoholnim proizvodima. Pijte odgovorno.</p>
+</div>
 
 <div class="ambient-glow" aria-hidden="true">
   <span class="glow glow-1"></span>
@@ -20,9 +30,10 @@
   <span class="glow glow-3"></span>
 </div>
 
+<div class="chrome-overlay">
 <div class="age-notice">Ovaj sadržaj namijenjen je osobama starijim od 18 godina. Pijte odgovorno.</div>
 
-<header class="site-header">
+<header class="site-header transparent-header">
   <div class="nav-wrap">
     <div class="nav-left">
       <button class="nav-toggle" aria-label="Otvori izbornik">
@@ -56,6 +67,7 @@
     </div>
   </div>
 </header>
+</div>
 
 <section class="hero page-hero">
   <img src="images/wine-photo-grasevina.jpeg" class="hero-bg" alt="">
@@ -161,8 +173,9 @@
   </div>
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer footer-centered">
   <div class="container">
+    <span class="footer-mark gold-shine-mark" role="img" aria-label="Vinarija Soldo logo"></span>
     <div class="footer-grid">
       <div>
         <h4>Vinarija Soldo</h4>
@@ -188,7 +201,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.
+      <span>&copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.</span>
+      <a href="#top" class="footer-top-link">Vrh</a>
     </div>
   </div>
 </footer>

@@ -12,7 +12,17 @@
 <link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <span class="logo-mark"></span>
+  </div>
+  <p class="age-gate-question">Jeste li stariji od 18 godina?</p>
+  <button type="button" class="age-gate-yes" id="age-gate-yes">Da, uđi</button>
+  <a href="https://www.google.com" class="age-gate-no">Ne</a>
+  <p class="age-gate-disclaimer">Pritiskom na gumb potvrđujete da ste punoljetni prema zakonima vaše zemlje. Ova stranica sadrži informacije o alkoholnim proizvodima. Pijte odgovorno.</p>
+</div>
 
 <div class="ambient-glow" aria-hidden="true">
   <span class="glow glow-1"></span>
@@ -20,6 +30,7 @@
   <span class="glow glow-3"></span>
 </div>
 
+<div class="chrome-overlay">
 <div class="age-notice">Ovaj sadržaj namijenjen je osobama starijim od 18 godina. Pijte odgovorno.</div>
 
 <div class="topbar">
@@ -35,7 +46,7 @@
   </div>
 </div>
 
-<header class="site-header">
+<header class="site-header transparent-header">
   <div class="nav-wrap">
     <div class="nav-left">
       <button class="nav-toggle" aria-label="Otvori izbornik">
@@ -69,6 +80,7 @@
     </div>
   </div>
 </header>
+</div>
 
 <section class="hero">
   <video
@@ -164,37 +176,34 @@
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">Izdvajamo</span>
-      <h2>Naš izbor vina</h2>
+      <h2>Otkrijte naša vina</h2>
     </div>
-    <div class="wine-grid">
-      <div class="wine-card">
-        <div class="wine-image photo"><img src="images/wine-photo-rose.jpeg" alt="Graševina, bijelo vino"></div>
-        <div class="wine-body">
-          <span class="wine-type">Bijelo vino</span>
-          <h3>Graševina</h3>
-          <p class="wine-price">od 3,50 € + PDV</p>
-          <p class="desc">Naša najprepoznatljivija sorta — svježe vino s notama zelene jabuke i bijelog cvijeta.</p>
+    <div class="showcase-carousel" id="wine-showcase-home">
+      <button type="button" class="showcase-arrow showcase-arrow-prev" aria-label="Prethodno vino">&#8249;</button>
+      <div class="showcase-track">
+        <div class="showcase-slide" data-name="Graševina" data-region="Bijelo vino">
+          <img src="images/wine-photo-grasevina.jpeg" alt="Boca Graševina">
+        </div>
+        <div class="showcase-slide" data-name="Mystique" data-region="Crno vino">
+          <img src="images/wine-mystique-front.png" alt="Boca Mystique">
+        </div>
+        <div class="showcase-slide" data-name="Rosé" data-region="Rosé vino">
+          <img src="images/wine-photo-hero.jpeg" alt="Boca Rosé">
+        </div>
+        <div class="showcase-slide" data-name="Chardonnay" data-region="Bijelo vino">
+          <img src="images/chardonnay-boca-stol.jpg" alt="Boca Chardonnay">
+        </div>
+        <div class="showcase-slide" data-name="Lumina Brut" data-region="Pjenušavo vino">
+          <img src="images/lumina-brut-boca.jpg" alt="Boca Lumina Brut">
         </div>
       </div>
-      <div class="wine-card">
-        <div class="wine-image"><img src="images/wine-red.svg" alt="Vetovo Cuvee, crno vino"></div>
-        <div class="wine-body">
-          <span class="wine-type">Crno vino</span>
-          <h3>Vetovo Cuvee</h3>
-          <p class="wine-price">od 3,50 € + PDV</p>
-          <p class="desc">Naša autorska kupaža crnih sorti — meko i okruglo, s notama crnog voća.</p>
-        </div>
-      </div>
-      <div class="wine-card">
-        <div class="wine-image photo"><img src="images/wine-photo-hero.jpeg" alt="Rosé vino"></div>
-        <div class="wine-body">
-          <span class="wine-type">Rosé</span>
-          <h3>Rosé</h3>
-          <p class="wine-price">6,00 € + PDV</p>
-          <p class="desc">Osvježavajuće vino nota jagode i divlje ruže, idealno za ljetne dane.</p>
-        </div>
-      </div>
+      <button type="button" class="showcase-arrow showcase-arrow-next" aria-label="Sljedeće vino">&#8250;</button>
     </div>
+    <div class="showcase-caption">
+      <h3>Graševina</h3>
+      <p>Bijelo vino</p>
+    </div>
+    <div class="showcase-dots"></div>
     <div class="text-center mt-12">
       <a href="vina.html" class="btn btn-dark">Pogledaj sva vina</a>
     </div>
@@ -239,8 +248,9 @@
   </div>
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer footer-centered">
   <div class="container">
+    <span class="footer-mark gold-shine-mark" role="img" aria-label="Vinarija Soldo logo"></span>
     <div class="footer-grid">
       <div>
         <h4>Vinarija Soldo</h4>
@@ -266,7 +276,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.
+      <span>&copy; <span id="year"></span> Vinarija Soldo. Sva prava pridržana.</span>
+      <a href="#top" class="footer-top-link">Vrh</a>
     </div>
   </div>
 </footer>
