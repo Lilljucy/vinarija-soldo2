@@ -620,6 +620,7 @@
   .photo-stack {
     @apply relative max-[900px]:mx-auto;
     height: 380px;
+    width: 100%;
     max-width: 340px;
   }
 
