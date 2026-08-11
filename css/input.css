@@ -892,6 +892,7 @@
   /* Grasevina cutout has a real transparent background - no card fill behind it */
   #grasevina .wine-image.bottle-photo {
     background: transparent;
+    padding: 6px 0 0;
   }
 
   .wine-card .wine-body {
