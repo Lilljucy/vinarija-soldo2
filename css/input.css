@@ -515,7 +515,7 @@
     font-weight: 400;
     font-style: normal;
     color: var(--color-gold-light);
-    font-size: 100px;
+    font-size: 120px;
     line-height: 1;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   }
@@ -688,6 +688,38 @@
     color: var(--color-coral);
   }
 
+  /* Naša priča layout: breaks out of .container so the photo-stack can be
+     centered against the true viewport edge, not just the container's own
+     padding. Two equal 1fr tracks flank the fixed-width photo column, so
+     it always sits exactly midway between the screen edge and the gap
+     before the text — the trailing 1fr just soaks up leftover width on
+     wide screens (text itself is capped so it doesn't stretch edge to
+     edge). */
+  .naspriva-grid {
+    @apply grid items-center;
+    grid-template-columns: 1fr 330px 1fr minmax(0, 480px) 1fr;
+  }
+
+  .naspriva-grid .photo-stack {
+    grid-column: 2;
+  }
+
+  .naspriva-grid > div:last-child {
+    grid-column: 4;
+  }
+
+  @media (max-width: 899px) {
+    .naspriva-grid {
+      @apply px-6;
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+    .naspriva-grid .photo-stack,
+    .naspriva-grid > div:last-child {
+      grid-column: 1;
+    }
+  }
+
   /* Fixed (not auto) to match .photo-stack's max-width: its photos are
      position:absolute, so they contribute no intrinsic size and an auto
      track collapses to 0. 380px covers the wider .photo-stack-multi
@@ -809,6 +841,47 @@
     .photo-stack-item:nth-child(3) {
       left: 30px;
       top: 100px;
+    }
+  }
+
+  /* Larger variant of the plain 3-photo stack (Zašto Soldo) — same layout,
+     bigger cards. */
+  .photo-stack-lg {
+    height: 460px;
+    max-width: 410px;
+  }
+
+  .photo-stack-lg .photo-stack-item {
+    width: 260px;
+    height: 310px;
+  }
+
+  .photo-stack-lg .photo-stack-item:nth-child(2) {
+    top: 70px;
+    left: 145px;
+  }
+
+  .photo-stack-lg .photo-stack-item:nth-child(3) {
+    top: 150px;
+    left: 50px;
+  }
+
+  @media (max-width: 480px) {
+    .photo-stack-lg {
+      height: 350px;
+      max-width: 300px;
+    }
+    .photo-stack-lg .photo-stack-item {
+      width: 190px;
+      height: 225px;
+    }
+    .photo-stack-lg .photo-stack-item:nth-child(2) {
+      top: 70px;
+      left: 107px;
+    }
+    .photo-stack-lg .photo-stack-item:nth-child(3) {
+      top: 119px;
+      left: 36px;
     }
   }
 
