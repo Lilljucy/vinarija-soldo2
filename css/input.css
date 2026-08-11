@@ -563,9 +563,11 @@
 
   /* Homepage intro heading has a longer first line ("Tradicija Kutjevačkog
      vinogorja") that needs more breathing room than the standard 640px
-     column so it doesn't wrap mid-phrase. */
+     column so it doesn't wrap mid-phrase. It's also the last thing in its
+     section, so the usual trailing mb-16 just adds unwanted gap before the
+     next section — dropped in favor of the section's own pb. */
   .section-heading.intro-heading {
-    @apply max-w-[860px];
+    @apply max-w-[860px] mb-0;
   }
 
   .section-heading .eyebrow {
@@ -695,7 +697,7 @@
 
   /* Overlapping photo cluster (Zašto Soldo) */
   .photo-stack {
-    @apply relative max-[900px]:mx-auto;
+    @apply relative mx-auto;
     height: 380px;
     width: 100%;
     max-width: 340px;

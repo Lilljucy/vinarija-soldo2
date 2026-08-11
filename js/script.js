@@ -2,6 +2,11 @@ var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html'];
 var wineTickerInterval = null;
 var quoteInterval = null;
 var revealObserver = null;
+// Pamti potvrdu dobi samo unutar trenutne posjete (dok je JS učitan u
+// pregledniku) — namjerno NE koristi localStorage, jer želimo da se
+// starosna provjera ponovno pojavi kod svakog svježeg učitavanja/refresha
+// stranice, a ne samo prvi put po pregledniku.
+var ageVerifiedThisVisit = false;
 
 function isInternalPageLink(href) {
   if (!href) return false;
@@ -13,11 +18,11 @@ function isInternalPageLink(href) {
 }
 
 function initPage() {
-  // Starosna provjera
+  // Starosna provjera — resetira se na svakom pravom učitavanju stranice,
+  // ali ostaje zapamćena dok se korisnik kreće po stranici (AJAX navigacija)
   var ageGate = document.getElementById('age-gate');
   if (ageGate) {
-    var AGE_KEY = 'soldoAgeVerified';
-    if (localStorage.getItem(AGE_KEY) === 'true') {
+    if (ageVerifiedThisVisit) {
       ageGate.setAttribute('hidden', '');
     } else {
       document.body.classList.add('age-gate-open');
@@ -39,7 +44,7 @@ function initPage() {
   if (wineTicker) {
     var wineNames = [
       'Graševina', 'Premium Graševina', 'Rizvanac', 'Manzoni', 'Johaniter', 'Hibernal',
-      'Chardonnay', 'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvee', 'Merlot',
+      'Chardonnay', 'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvée', 'Merlot',
       'Mystique', 'Rosé', 'Lumina Brut'
     ];
     var wineSlugs = [
@@ -357,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!e.target.closest('#age-gate-yes')) return;
     var ageGate = document.getElementById('age-gate');
     if (!ageGate) return;
-    localStorage.setItem('soldoAgeVerified', 'true');
+    ageVerifiedThisVisit = true;
     ageGate.setAttribute('hidden', '');
     document.body.classList.remove('age-gate-open');
   });
