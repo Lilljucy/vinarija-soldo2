@@ -185,21 +185,15 @@
     @apply text-white text-lg font-medium mb-6;
   }
 
+  /* Visual style now comes from the shared .btn/.btn-primary/.btn-outline
+     classes on the elements themselves — these just add the age-gate's
+     own vertical spacing between the two buttons and the disclaimer. */
   .age-gate-yes {
-    @apply inline-block py-3.5 px-9 rounded-full bg-white text-ink text-[0.9rem] tracking-[1.5px] uppercase cursor-pointer border-2 border-white mb-5;
-    transition: all 0.3s ease;
-  }
-
-  .age-gate-yes:hover {
-    @apply bg-transparent text-white;
+    @apply mb-5;
   }
 
   .age-gate-no {
-    @apply text-fog text-[0.85rem] uppercase tracking-[1.5px] mb-16 cursor-pointer;
-  }
-
-  .age-gate-no:hover {
-    @apply text-white;
+    @apply mb-16;
   }
 
   .age-gate-disclaimer {

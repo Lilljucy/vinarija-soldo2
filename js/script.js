@@ -2,11 +2,8 @@ var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html'];
 var wineTickerInterval = null;
 var quoteInterval = null;
 var revealObserver = null;
-// Pamti potvrdu dobi samo unutar trenutne posjete (dok je JS učitan u
-// pregledniku) — namjerno NE koristi localStorage, jer želimo da se
-// starosna provjera ponovno pojavi kod svakog svježeg učitavanja/refresha
-// stranice, a ne samo prvi put po pregledniku.
-var ageVerifiedThisVisit = false;
+var AGE_GATE_KEY = 'soldoAgeVerifiedAt';
+var AGE_GATE_TTL_MS = 30 * 60 * 1000; // 30 minuta
 
 function isInternalPageLink(href) {
   if (!href) return false;
@@ -18,13 +15,16 @@ function isInternalPageLink(href) {
 }
 
 function initPage() {
-  // Starosna provjera — resetira se na svakom pravom učitavanju stranice,
-  // ali ostaje zapamćena dok se korisnik kreće po stranici (AJAX navigacija)
+  // Starosna provjera — potvrda vrijedi 30 minuta (pamti se preko
+  // localStorage), pa se pitanje ne postavlja iznova kod svakog refresha
+  // unutar tog vremena, nego tek kad ta "sesija" istekne.
   var ageGate = document.getElementById('age-gate');
   if (ageGate) {
-    if (ageVerifiedThisVisit) {
+    var verifiedAt = Number(localStorage.getItem(AGE_GATE_KEY));
+    if (verifiedAt && Date.now() - verifiedAt < AGE_GATE_TTL_MS) {
       ageGate.setAttribute('hidden', '');
     } else {
+      localStorage.removeItem(AGE_GATE_KEY);
       document.body.classList.add('age-gate-open');
     }
   }
@@ -357,12 +357,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Starosna provjera — gumb "Da, uđi" (delegirano)
+  // Starosna provjera — gumb "Imam" (delegirano)
   document.addEventListener('click', function (e) {
     if (!e.target.closest('#age-gate-yes')) return;
     var ageGate = document.getElementById('age-gate');
     if (!ageGate) return;
-    ageVerifiedThisVisit = true;
+    localStorage.setItem(AGE_GATE_KEY, String(Date.now()));
     ageGate.setAttribute('hidden', '');
     document.body.classList.remove('age-gate-open');
   });
