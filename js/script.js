@@ -37,14 +37,14 @@ function initPage() {
   var wineTicker = document.getElementById('wine-ticker-text');
   if (wineTicker) {
     var wineNames = [
-      'Graševina', 'Rizvanac', 'Manzoni', 'Johaniter', 'Chardonnay',
-      'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvee', 'Merlot',
-      'Mystique', 'Rosé', 'Pjenušac Chardonnay'
+      'Graševina', 'Premium Graševina', 'Rizvanac', 'Manzoni', 'Johaniter', 'Hibernal',
+      'Chardonnay', 'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvee', 'Merlot',
+      'Mystique', 'Rosé', 'Lumina Brut'
     ];
     var wineSlugs = [
-      'grasevina', 'rizvanac', 'manzoni', 'johaniter', 'chardonnay',
-      'sauvignon', 'mirisni-traminac', 'vetovo-cuvee', 'merlot',
-      'mystique', 'rose', 'pjenusac-chardonnay'
+      'grasevina', 'premium-grasevina', 'rizvanac', 'manzoni', 'johaniter', 'hibernal',
+      'chardonnay', 'sauvignon', 'mirisni-traminac', 'vetovo-cuvee', 'merlot',
+      'mystique', 'rose', 'lumina-brut'
     ];
     var wineIndex = 0;
     wineTickerInterval = setInterval(function () {
