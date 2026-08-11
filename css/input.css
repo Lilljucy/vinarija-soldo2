@@ -1546,7 +1546,7 @@
   }
 
   .footer-credit-logo {
-    @apply inline-block h-[13px] w-auto align-middle;
+    @apply inline-block h-[26px] w-auto align-middle;
     opacity: 0.75;
     transition: opacity 0.25s ease;
   }
