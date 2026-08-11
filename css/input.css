@@ -889,6 +889,11 @@
     @apply scale-[1.06];
   }
 
+  /* Grasevina cutout has a real transparent background - no card fill behind it */
+  #grasevina .wine-image.bottle-photo {
+    background: transparent;
+  }
+
   .wine-card .wine-body {
     @apply pt-6 px-[26px] pb-[30px] flex-1 flex flex-col;
   }
@@ -997,6 +1002,13 @@
   .showcase-slide.is-bottle .showcase-img,
   .showcase-slide.is-icon .showcase-img {
     @apply object-contain p-9;
+  }
+
+  /* Grasevina uses a real cutout photo (transparent background) -
+     let the bottle float instead of sitting in a cream card */
+  .showcase-slide.is-bottle {
+    background: transparent;
+    box-shadow: none;
   }
 
   /* Graševina: crossfade from the upright bottle to the real tilted-bottle photo
