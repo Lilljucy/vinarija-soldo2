@@ -457,8 +457,9 @@
      padding, .contact-hero sets its own fixed padding below */
   .hero:not(.page-hero):not(.contact-hero) {
     @apply py-0;
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: calc(100vh - 136px);
+    min-height: calc(100dvh - 136px);
+    margin-top: 136px;
     background: #000;
   }
 
