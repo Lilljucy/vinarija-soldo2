@@ -790,15 +790,6 @@
     }
   }
 
-  /* Outline button for use on light backgrounds */
-  .btn-outline-dark {
-    @apply bg-transparent text-ink border-ink;
-  }
-
-  .btn-outline-dark:hover {
-    @apply bg-ink text-gold-light;
-  }
-
   /* Feature cards */
   .feature-grid {
     @apply grid grid-cols-3 gap-8 max-[900px]:grid-cols-2 max-[720px]:grid-cols-1;
