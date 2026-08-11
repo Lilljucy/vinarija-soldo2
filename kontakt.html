@@ -23,6 +23,16 @@
   <a href="https://www.google.com" class="age-gate-no btn btn-outline">Nemam</a>
   <p class="age-gate-disclaimer">Pritiskom na gumb potvrđujete da ste punoljetni. Ova stranica sadrži informacije o alkoholnim proizvodima. Pijte odgovorno.</p>
 </div>
+<script>
+  (function () {
+    try {
+      var verifiedAt = Number(localStorage.getItem('soldoAgeVerifiedAt'));
+      if (verifiedAt && Date.now() - verifiedAt < 30 * 60 * 1000) {
+        document.getElementById('age-gate').setAttribute('hidden', '');
+      }
+    } catch (e) {}
+  })();
+</script>
 
 <div class="ambient-glow" aria-hidden="true">
   <span class="glow glow-1"></span>
