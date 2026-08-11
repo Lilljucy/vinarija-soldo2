@@ -264,7 +264,7 @@
   }
 
   .nav-left {
-    @apply relative justify-self-start;
+    @apply relative justify-self-start flex items-center;
   }
 
   .logo {
@@ -356,6 +356,7 @@
 
     nav.main-nav {
       position: static;
+      margin-top: 9px;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
@@ -505,14 +506,14 @@
      Futura since it's an open, Futura-styled geometric sans. */
   .hero-tagline {
     @apply absolute left-1/2 w-full text-center z-[2] pointer-events-none px-6;
-    top: 76%;
+    bottom: 6%;
     transform: translateX(-50%);
   }
 
   .hero-tagline-script {
     font-family: "Alex Brush", cursive;
     color: var(--color-gold-light);
-    font-size: 2.6rem;
+    font-size: 100px;
     line-height: 1;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   }
@@ -521,7 +522,7 @@
     @apply uppercase font-semibold mt-2;
     font-family: "Jost", sans-serif;
     color: #fff;
-    font-size: 1rem;
+    font-size: 50px;
     letter-spacing: 6px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
@@ -530,16 +531,19 @@
      (see .hero:not(.page-hero):not(.contact-hero) above) — the box shape
      is constant here regardless of viewport, so the baked-in logo always
      ends up at the same relative height and one offset covers every
-     viewport that hits this branch (phones and landscape tablets alike). */
+     viewport that hits this branch (phones and landscape tablets alike).
+     Full 100px/50px sizing only fits the spacious desktop box; scaled
+     down here so both lines still fit under the logo without overflowing
+     the much shorter capped box. */
   @media (max-aspect-ratio: 3/2) {
     .hero-tagline {
       top: 60%;
     }
     .hero-tagline-script {
-      font-size: 1.7rem;
+      font-size: 2.2rem;
     }
     .hero-tagline-welcome {
-      font-size: 0.72rem;
+      font-size: 0.85rem;
       letter-spacing: 4px;
     }
   }
@@ -682,11 +686,12 @@
     color: var(--color-coral);
   }
 
-  /* Fixed 340px (not auto) to match .photo-stack's max-width: its photos
-     are position:absolute, so they contribute no intrinsic size and an
-     auto track collapses to 0. */
+  /* Fixed (not auto) to match .photo-stack's max-width: its photos are
+     position:absolute, so they contribute no intrinsic size and an auto
+     track collapses to 0. 380px covers the wider .photo-stack-multi
+     variant too — a plain 2-3 photo .photo-stack just centers within it. */
   .story-grid {
-    @apply min-[900px]:[grid-template-columns:340px_1fr];
+    @apply min-[900px]:[grid-template-columns:380px_1fr];
   }
 
   /* Secondary dark panel band (visit / radno vrijeme) */
@@ -724,11 +729,11 @@
   }
 
   .visit-image {
-    @apply rounded-3xl overflow-hidden shadow-soldo border border-white/15 h-[440px] max-[900px]:h-[320px];
+    @apply rounded-3xl overflow-hidden shadow-soldo border border-white/15;
   }
 
   .visit-image img {
-    @apply w-full h-full object-cover;
+    @apply block w-full h-auto;
   }
 
   /* Experiences split (image-free tile grid, mirrors reference's offset block grid) */
@@ -797,6 +802,94 @@
     .photo-stack-item:nth-child(3) {
       left: 30px;
       top: 100px;
+    }
+  }
+
+  /* Larger variant for 5-6 photo collages (smaller cards, more positions) */
+  .photo-stack-multi {
+    height: 590px;
+    max-width: 380px;
+  }
+
+  .photo-stack-multi .photo-stack-item {
+    width: 150px;
+    height: 180px;
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(-6deg);
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(2) {
+    top: 50px;
+    left: 160px;
+    z-index: 2;
+    transform: rotate(5deg);
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(3) {
+    top: 170px;
+    left: 15px;
+    z-index: 3;
+    transform: rotate(-4deg);
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(4) {
+    top: 220px;
+    left: 170px;
+    z-index: 4;
+    transform: rotate(6deg);
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(5) {
+    top: 340px;
+    left: 55px;
+    z-index: 5;
+    transform: rotate(-3deg);
+  }
+
+  .photo-stack-multi .photo-stack-item:nth-child(6) {
+    top: 390px;
+    left: 180px;
+    z-index: 6;
+    transform: rotate(4deg);
+  }
+
+  @media (max-width: 480px) {
+    .photo-stack-multi {
+      height: 420px;
+      max-width: 250px;
+    }
+    .photo-stack-multi .photo-stack-item {
+      width: 105px;
+      height: 125px;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(2) {
+      top: 35px;
+      left: 100px;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(3) {
+      top: 120px;
+      left: 5px;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(4) {
+      top: 155px;
+      left: 105px;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(5) {
+      top: 240px;
+      left: 35px;
+    }
+    .photo-stack-multi .photo-stack-item:nth-child(6) {
+      top: 275px;
+      left: 115px;
     }
   }
 
