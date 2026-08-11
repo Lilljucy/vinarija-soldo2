@@ -1,5 +1,6 @@
 var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html'];
 var wineTickerInterval = null;
+var quoteInterval = null;
 var revealObserver = null;
 
 function isInternalPageLink(href) {
@@ -58,6 +59,32 @@ function initPage() {
         el.classList.remove('fade');
       }, 350);
     }, 2600);
+  }
+
+  // Rotirajući citati u "alt" sekciji
+  if (quoteInterval) {
+    clearInterval(quoteInterval);
+    quoteInterval = null;
+  }
+  var quoteEl = document.getElementById('rotating-quote');
+  if (quoteEl) {
+    var quotes = [
+      '"Vino je poezija zemlje pretočena u čašu."',
+      '"Sav misterij slavonske noći krije se u dubini crnog vina Mystique."',
+      '"Ne proizvodimo samo vino, mi stvaramo trenutke."',
+      '"Vino je umjetnost koja se dovršava tek kada se podijeli s pravim ljudima."'
+    ];
+    var quoteIndex = 0;
+    quoteInterval = setInterval(function () {
+      var el = document.getElementById('rotating-quote');
+      if (!el) return;
+      el.classList.add('fade');
+      setTimeout(function () {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        el.textContent = quotes[quoteIndex];
+        el.classList.remove('fade');
+      }, 400);
+    }, 5000);
   }
 
   // Filtriranje vina na stranici Vina
