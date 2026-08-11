@@ -963,6 +963,7 @@
     left: 50%;
     width: 260px;
     height: 460px;
+    background: var(--color-cream);
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
   }
 
@@ -986,8 +987,38 @@
     }
   }
 
-  .showcase-slide img {
-    @apply w-full h-full object-cover pointer-events-none;
+  .showcase-img {
+    @apply absolute inset-0 w-full h-full object-cover pointer-events-none;
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Isolated bottle/product shots (transparent-ish or white background)
+     get contained + padded instead of cropped edge-to-edge like the lifestyle photos */
+  .showcase-slide.is-bottle .showcase-img,
+  .showcase-slide.is-icon .showcase-img {
+    @apply object-contain p-9;
+  }
+
+  /* Graševina: crossfade from the upright bottle to the real tilted-bottle photo
+     as the slide becomes the active/centered one in the carousel */
+  .showcase-img-tilt {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  .showcase-slide.is-active .showcase-img-default {
+    opacity: 0;
+  }
+
+  .showcase-slide.is-active .showcase-img-tilt {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .showcase-img {
+      transition: opacity 0.3s ease;
+    }
   }
 
   .showcase-arrow {

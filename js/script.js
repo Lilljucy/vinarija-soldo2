@@ -149,6 +149,7 @@ function initPage() {
         slide.style.opacity = String(opacity);
         slide.style.zIndex = String(z);
         slide.style.pointerEvents = abs > 2 ? 'none' : 'auto';
+        slide.classList.toggle('is-active', abs === 0);
       });
       dots.forEach(function (dot, i) { dot.classList.toggle('active', i === current); });
       if (nameEl) nameEl.textContent = slides[current].dataset.name;
