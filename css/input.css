@@ -786,6 +786,10 @@
     @apply flex flex-wrap justify-center gap-4 max-[900px]:justify-start;
   }
 
+  .visit-buttons .btn {
+    @apply min-w-[245px] text-center;
+  }
+
   .visit-image {
     @apply rounded-3xl overflow-hidden shadow-soldo border border-white/15;
   }
@@ -1126,51 +1130,36 @@
     }
   }
 
-  /* Liquid-glass nav arrows: layered frosted blur + top specular highlight
-     + gold refraction glow at the base, tactile scale/press response.
-     overflow:hidden clips the highlight pseudo-elements to the circle;
-     the button's own outer box-shadow still renders outside that clip. */
+  /* Liquid-glass nav arrows: icon only, no circular chip, so they stay
+     small and never sit as a visible disc over the bottle photo on
+     mobile. The "glass" reads through a soft blurred glow behind the
+     glyph plus layered drop-shadows (bright highlight + dark depth)
+     instead of a bordered/backdrop-blurred container. */
   .showcase-arrow {
-    @apply absolute top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full flex items-center justify-center cursor-pointer overflow-hidden max-[640px]:w-9 max-[640px]:h-9;
-    isolation: isolate;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.14) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    box-shadow:
-      0 10px 24px rgba(0, 0, 0, 0.45),
-      0 2px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 1px rgba(255, 255, 255, 0.65),
-      inset 0 -8px 14px rgba(0, 0, 0, 0.28);
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+    @apply absolute top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center cursor-pointer max-[640px]:w-7 max-[640px]:h-7;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
   }
 
   .showcase-arrow-prev {
-    left: 4%;
+    left: 3%;
   }
 
   .showcase-arrow-next {
-    right: 4%;
+    right: 3%;
   }
 
   .showcase-arrow::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(120% 65% at 28% -10%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 55%);
-    pointer-events: none;
-  }
-
-  .showcase-arrow::after {
-    content: "";
-    position: absolute;
-    left: 12%;
-    right: 12%;
-    bottom: 6%;
-    height: 32%;
     border-radius: 50%;
-    background: radial-gradient(60% 100% at 50% 100%, rgba(203, 174, 122, 0.4) 0%, rgba(203, 174, 122, 0) 70%);
-    filter: blur(2px);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 68%);
+    filter: blur(5px);
+    opacity: 0.65;
+    transition: opacity 0.3s ease, background 0.3s ease;
     pointer-events: none;
   }
 
@@ -1179,24 +1168,26 @@
     z-index: 2;
     width: 16px;
     height: 16px;
-    stroke: #fff;
-    stroke-width: 2.4;
+    stroke: rgba(255, 255, 255, 0.92);
+    stroke-width: 2.8;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
-    transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+    filter: drop-shadow(0 -1px 0.5px rgba(255, 255, 255, 0.7)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55));
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  .showcase-arrow:hover {
-    transform: scale(1.08);
-    border-color: rgba(203, 174, 122, 0.55);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(203, 174, 122, 0.22) 100%);
-    box-shadow:
-      0 14px 30px rgba(0, 0, 0, 0.5),
-      0 3px 8px rgba(0, 0, 0, 0.35),
-      inset 0 1px 1px rgba(255, 255, 255, 0.8),
-      inset 0 -8px 14px rgba(0, 0, 0, 0.24);
+  @media (max-width: 640px) {
+    .showcase-arrow svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 3;
+    }
+  }
+
+  .showcase-arrow:hover::before {
+    opacity: 1;
+    background: radial-gradient(circle, rgba(203, 174, 122, 0.5) 0%, rgba(203, 174, 122, 0) 68%);
   }
 
   .showcase-arrow-prev:hover svg {
@@ -1207,17 +1198,13 @@
     transform: translateX(2px);
   }
 
-  .showcase-arrow:active {
-    transform: scale(0.92);
-    box-shadow:
-      0 4px 10px rgba(0, 0, 0, 0.4),
-      inset 0 3px 6px rgba(0, 0, 0, 0.4),
-      inset 0 -2px 4px rgba(255, 255, 255, 0.15);
+  .showcase-arrow:active svg {
+    transform: scale(0.82);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .showcase-arrow,
-    .showcase-arrow svg {
+    .showcase-arrow svg,
+    .showcase-arrow::before {
       transition: none;
     }
   }
