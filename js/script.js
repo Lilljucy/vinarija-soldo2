@@ -5,6 +5,7 @@ var photoStackTimers = [];
 var revealObserver = null;
 var AGE_GATE_KEY = 'soldoAgeVerifiedAt';
 var AGE_GATE_TTL_MS = 30 * 60 * 1000; // 30 minuta
+var COOKIE_CONSENT_KEY = 'soldoCookieConsent';
 
 function isInternalPageLink(href) {
   if (!href) return false;
@@ -27,6 +28,16 @@ function initPage() {
     } else {
       localStorage.removeItem(AGE_GATE_KEY);
       document.body.classList.add('age-gate-open');
+    }
+  }
+
+  // Kolačići — traka ostaje skrivena dok korisnik ne odabere prihvaćam/odbijam;
+  // odluka se pamti trajno (bez isteka), pa se pitanje ne ponavlja svaki posjet.
+  var cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    var cookieChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!cookieChoice) {
+      cookieBanner.removeAttribute('hidden');
     }
   }
 
@@ -392,6 +403,17 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem(AGE_GATE_KEY, String(Date.now()));
     ageGate.setAttribute('hidden', '');
     document.body.classList.remove('age-gate-open');
+  });
+
+  // Kolačići — gumbi "Prihvaćam" / "Odbijam" (delegirano)
+  document.addEventListener('click', function (e) {
+    var accept = e.target.closest('#cookie-accept');
+    var decline = e.target.closest('#cookie-decline');
+    if (!accept && !decline) return;
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    localStorage.setItem(COOKIE_CONSENT_KEY, accept ? 'accepted' : 'declined');
+    banner.setAttribute('hidden', '');
   });
 
   // Lightbox — zatvaranje (delegirano)
