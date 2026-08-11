@@ -581,6 +581,10 @@
     line-height: 1.3;
   }
 
+  .section-heading h1 .title-break {
+    @apply block mt-5 max-[900px]:mt-3;
+  }
+
   .section-heading .lead {
     @apply text-[1.15rem] text-fog;
   }
