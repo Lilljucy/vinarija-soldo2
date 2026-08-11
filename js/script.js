@@ -137,8 +137,11 @@ function initPage() {
     });
 
     function render() {
+      var n = slides.length;
       slides.forEach(function (slide, i) {
         var offset = i - current;
+        offset = ((offset % n) + n) % n;
+        if (offset > n / 2) offset -= n;
         var abs = Math.abs(offset);
         var scale, tx, opacity, z;
         if (abs === 0) { scale = 1; tx = 0; opacity = 1; z = 10; }
