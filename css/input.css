@@ -464,12 +464,11 @@
     @apply absolute inset-0 w-full h-full object-cover z-0 pointer-events-none;
   }
 
-  /* Video logo animation has tight top/bottom margins on a black canvas.
-     Cover only crops top/bottom once the viewport is wider than the video's
-     own 16:9 frame, so switch to contain (letterbox blends into the matching
-     black hero background) just for that case — narrower/taller viewports
-     (most phones) keep cover, where it only trims empty side margins. */
-  @media (min-aspect-ratio: 16/9) {
+  /* Video canvas is padded to 32:9 with black bars around the logo mark, so
+     cover always fills the viewport edge-to-edge (matching the header) and
+     only ever trims the empty side padding — never the logo itself. This
+     media query is just a safety net for viewports wider than 32:9. */
+  @media (min-aspect-ratio: 32/9) {
     .hero:not(.page-hero) .hero-bg {
       @apply object-contain;
     }
