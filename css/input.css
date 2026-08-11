@@ -464,11 +464,11 @@
     @apply absolute inset-0 w-full h-full object-cover z-0 pointer-events-none;
   }
 
-  /* Video canvas is padded to 32:9 with black bars around the logo mark, so
+  /* Video canvas is padded to 5:1 with black bars around the logo mark, so
      cover always fills the viewport edge-to-edge (matching the header) and
      only ever trims the empty side padding — never the logo itself. This
-     media query is just a safety net for viewports wider than 32:9. */
-  @media (min-aspect-ratio: 32/9) {
+     media query is just a safety net for viewports wider than 5:1. */
+  @media (min-aspect-ratio: 5/1) {
     .hero:not(.page-hero) .hero-bg {
       @apply object-contain;
     }
@@ -561,6 +561,13 @@
     @apply text-center max-w-[640px] mx-auto mb-16;
   }
 
+  /* Homepage intro heading has a longer first line ("Tradicija Kutjevačkog
+     vinogorja") that needs more breathing room than the standard 640px
+     column so it doesn't wrap mid-phrase. */
+  .section-heading.intro-heading {
+    @apply max-w-[860px];
+  }
+
   .section-heading .eyebrow {
     @apply block uppercase tracking-[3px] text-gold text-[0.8rem] mb-2.5;
   }
@@ -570,7 +577,7 @@
   }
 
   .section-heading h1 {
-    @apply text-white text-[2.6rem] font-bold uppercase tracking-[1.5px] mb-5 max-[720px]:text-[1.8rem];
+    @apply text-white text-[2.6rem] font-bold uppercase tracking-[1.5px] mb-5 max-[900px]:text-[1.8rem];
     line-height: 1.3;
   }
 
