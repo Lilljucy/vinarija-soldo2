@@ -1,6 +1,7 @@
 var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html'];
 var wineTickerInterval = null;
 var quoteInterval = null;
+var photoStackInterval = null;
 var revealObserver = null;
 var AGE_GATE_KEY = 'soldoAgeVerifiedAt';
 var AGE_GATE_TTL_MS = 30 * 60 * 1000; // 30 minuta
@@ -90,6 +91,32 @@ function initPage() {
         el.classList.remove('fade');
       }, 400);
     }, 5000);
+  }
+
+  // Zašto Soldo photo-stack — izmjenjuje 3 prikazane slike sa 3 druge, u parovima
+  if (photoStackInterval) {
+    clearInterval(photoStackInterval);
+    photoStackInterval = null;
+  }
+  var zastoPhotoStack = document.getElementById('zasto-photo-stack');
+  if (zastoPhotoStack) {
+    photoStackInterval = setInterval(function () {
+      var stack = document.getElementById('zasto-photo-stack');
+      if (!stack) return;
+      var imgs = stack.querySelectorAll('.photo-stack-item img');
+      imgs.forEach(function (img) { img.classList.add('fade'); });
+      setTimeout(function () {
+        imgs.forEach(function (img) {
+          var src = img.getAttribute('src');
+          var alt = img.getAttribute('alt');
+          img.setAttribute('src', img.getAttribute('data-alt-src'));
+          img.setAttribute('alt', img.getAttribute('data-alt-alt'));
+          img.setAttribute('data-alt-src', src);
+          img.setAttribute('data-alt-alt', alt);
+          img.classList.remove('fade');
+        });
+      }, 450);
+    }, 4500);
   }
 
   // Filtriranje vina na stranici Vina
