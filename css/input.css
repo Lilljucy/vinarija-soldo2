@@ -157,27 +157,6 @@
     @apply max-w-[1200px] mx-auto px-6;
   }
 
-  /* Luksuzni zlatni metalik tekst — logo i istaknuti nazivi */
-  .gold-shine-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(115deg, #7a5c06 0%, #f9e8a2 15%, #b59410 32%, #fff6d8 48%, #8a6a08 65%, #f8e387 82%, #a67c0a 100%);
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.65));
-  }
-
-  /* Ista zlatna metalik obrada primijenjena na PNG logo-simbol (maskira oblik loga, puni ga gradijentom) */
-  .gold-shine-mark {
-    @apply inline-block bg-gold;
-    background-image: linear-gradient(115deg, #7a5c06 0%, #f9e8a2 15%, #b59410 32%, #fff6d8 48%, #8a6a08 65%, #f8e387 82%, #a67c0a 100%);
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
-  }
-
   .age-notice {
     @apply text-white text-center text-[0.82rem] py-2.5 px-5 tracking-[0.5px] border-b border-gold-border/25;
     background: var(--color-forest-deep);
@@ -194,21 +173,12 @@
   }
 
   .age-gate-mark {
-    @apply w-20 h-20 rounded-full border-2 flex items-center justify-center mb-8;
-    border-color: var(--color-gold);
+    @apply flex items-center justify-center mb-8;
   }
 
-  .age-gate-mark .logo-mark {
-    @apply h-9 w-[19px] inline-block bg-gold;
-    background-image: linear-gradient(115deg, #7a5c06 0%, #f9e8a2 15%, #b59410 32%, #fff6d8 48%, #8a6a08 65%, #f8e387 82%, #a67c0a 100%);
-    -webkit-mask-image: url("../images/logo-icon-gold.png");
-    mask-image: url("../images/logo-icon-gold.png");
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+  .age-gate-mark .age-gate-logo {
+    @apply w-40 h-auto max-[420px]:w-32;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
   }
 
   .age-gate-question {
@@ -495,16 +465,8 @@
   }
 
   .hero-content .hero-logo {
-    @apply block w-24 mx-auto mb-[68px] max-[720px]:w-[68px] max-[720px]:mb-10;
-    height: calc(96px * 2767 / 1442);
-    -webkit-mask-image: url("../images/logo-icon-gold.png");
-    mask-image: url("../images/logo-icon-gold.png");
-  }
-
-  @media (max-width: 720px) {
-    .hero-content .hero-logo {
-      height: calc(68px * 2767 / 1442);
-    }
+    @apply block w-56 h-auto mx-auto mb-[68px] max-[720px]:w-40 max-[720px]:mb-10;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
   }
 
   .hero-content .eyebrow {
@@ -963,7 +925,7 @@
 
   .showcase-img {
     @apply absolute inset-0 w-full h-full object-cover pointer-events-none;
-    transition: opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1), transform 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1), transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
     will-change: opacity, transform;
   }
 
@@ -1003,7 +965,6 @@
   .showcase-slide.is-active .showcase-img-tilt {
     opacity: 1;
     transform: scale(1.08) rotate(0deg) translateY(0);
-    filter: blur(0);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1270,15 +1231,7 @@
   }
 
   .footer-mark {
-    @apply inline-block w-9 h-9 mb-10;
-    -webkit-mask-image: url("../images/logo-icon-gold.png");
-    mask-image: url("../images/logo-icon-gold.png");
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    @apply inline-block w-32 h-auto mb-10;
   }
 
   .footer-centered .footer-grid {
