@@ -758,7 +758,7 @@
   }
 
   .visit-band > div:first-child {
-    @apply flex flex-col max-[900px]:block;
+    @apply flex flex-col items-center text-center max-[900px]:block max-[900px]:text-left;
   }
 
   .visit-band p {
@@ -783,7 +783,7 @@
   }
 
   .visit-buttons {
-    @apply flex flex-wrap gap-4;
+    @apply flex flex-wrap justify-center gap-4 max-[900px]:justify-start;
   }
 
   .visit-image {
