@@ -1533,6 +1533,18 @@
     color: var(--color-gold-light);
   }
 
+  /* Copyright + CreoLab credit sit inline together on desktop; below
+     480px they split onto their own separate lines within this group
+     (the group itself is one of footer-bottom's flex children, which is
+     what stacks it above "Vrh" as a whole). */
+  .footer-copy-group {
+    @apply inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 max-[480px]:flex-col max-[480px]:gap-1;
+  }
+
+  .footer-credit-line {
+    @apply inline-flex items-center gap-1.5;
+  }
+
   .footer-credit {
     @apply inline-flex items-center gap-1.5 ml-2;
     color: rgba(255, 255, 255, 0.5);
