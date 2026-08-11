@@ -145,9 +145,9 @@ function initPage() {
         var abs = Math.abs(offset);
         var scale, tx, opacity, z;
         if (abs === 0) { scale = 1; tx = 0; opacity = 1; z = 10; }
-        else if (abs === 1) { scale = 0.72; tx = offset > 0 ? 62 : -62; opacity = 0.55; z = 5; }
-        else if (abs === 2) { scale = 0.5; tx = offset > 0 ? 100 : -100; opacity = 0.25; z = 2; }
-        else { scale = 0.5; tx = offset > 0 ? 130 : -130; opacity = 0; z = 0; }
+        else if (abs === 1) { scale = 0.72; tx = offset > 0 ? -62 : 62; opacity = 0.55; z = 5; }
+        else if (abs === 2) { scale = 0.5; tx = offset > 0 ? -100 : 100; opacity = 0.25; z = 2; }
+        else { scale = 0.5; tx = offset > 0 ? -130 : 130; opacity = 0; z = 0; }
         slide.style.transform = 'translate(-50%, -50%) translateX(' + tx + '%) scale(' + scale + ')';
         slide.style.opacity = String(opacity);
         slide.style.zIndex = String(z);
