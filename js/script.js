@@ -93,10 +93,9 @@ function initPage() {
     }, 5000);
   }
 
-  // Zašto Soldo photo-stack — svaka od 3 slike neovisno i nasumično
-  // izmjenjuje svoj par (originalna/nova), umjesto da se sve tri
-  // mijenjaju istovremeno — vrijedi za svaki photo-stack koji ima
-  // slike označene s data-alt-src (trenutno Naša priča i Zašto Soldo)
+  // Svaka slika u photo-stack komponenti (koja ima data-alt-src) neovisno
+  // i nasumično izmjenjuje svoj par (originalna/nova), umjesto da se sve
+  // slike u istom stacku mijenjaju istovremeno.
   photoStackTimers.forEach(function (id) { clearTimeout(id); });
   photoStackTimers = [];
   var zastoImgs = document.querySelectorAll('.photo-stack-item img[data-alt-src]');
