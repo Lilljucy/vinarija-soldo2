@@ -889,26 +889,9 @@
     @apply scale-[1.06];
   }
 
-  /* Grasevina cutout has a real transparent background - no card fill behind it.
-     The bottle is scaled up from the bottom edge and allowed to bleed past its
-     box (instead of growing the box itself, which would stretch the whole grid row). */
-  #grasevina.wine-card {
-    overflow: visible;
-  }
-
+  /* Grasevina cutout has a real transparent background - no card fill behind it */
   #grasevina .wine-image.bottle-photo {
     background: transparent;
-    padding: 6px 0 0;
-    overflow: visible;
-  }
-
-  #grasevina .wine-image.bottle-photo img {
-    scale: 1.15;
-    transform-origin: bottom center;
-  }
-
-  #grasevina.wine-card:hover .wine-image.bottle-photo img {
-    scale: 1.22;
   }
 
   .wine-card .wine-body {
