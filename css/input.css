@@ -187,7 +187,14 @@
 
   /* Visual style now comes from the shared .btn/.btn-primary/.btn-outline
      classes on the elements themselves — these just add the age-gate's
-     own vertical spacing between the two buttons and the disclaimer. */
+     own vertical spacing and force both buttons to share one fixed
+     width/height (the base .btn is inline-block, so "Imam"/"Nemam" would
+     otherwise size to their own text and end up different widths). */
+  .age-gate-yes,
+  .age-gate-no {
+    @apply w-[200px] text-center max-[420px]:w-[170px];
+  }
+
   .age-gate-yes {
     @apply mb-5;
   }
