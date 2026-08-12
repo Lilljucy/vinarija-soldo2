@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About us — Vinarija Soldo</title>
+<meta name="description" content="Discover the story of the Soldo family, our winemaking tradition, and the values behind our wines.">
+<link rel="canonical" href="https://vinarija-soldo.vercel.app/en/o-nama.html">
+<link rel="alternate" hreflang="hr" href="https://vinarija-soldo.vercel.app/o-nama.html">
+<link rel="alternate" hreflang="en" href="https://vinarija-soldo.vercel.app/en/o-nama.html">
+<link rel="alternate" hreflang="de" href="https://vinarija-soldo.vercel.app/de/o-nama.html">
+<link rel="alternate" hreflang="x-default" href="https://vinarija-soldo.vercel.app/o-nama.html">
+<link rel="icon" href="../images/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/fontawesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <img class="age-gate-logo" src="../images/soldo-logo-zlatni.svg" alt="">
+  </div>
+  <p class="age-gate-question">Are you over 18 years old?</p>
+  <button type="button" class="age-gate-yes btn btn-primary" id="age-gate-yes">Yes, I am</button>
+  <a href="https://www.google.com" class="age-gate-no btn btn-outline">No</a>
+  <p class="age-gate-disclaimer">By clicking the button, you confirm that you are of legal age. This website contains information about alcoholic beverages. Please drink responsibly.</p>
+</div>
+<script>
+  (function () {
+    try {
+      var verifiedAt = Number(localStorage.getItem('soldoAgeVerifiedAt'));
+      if (verifiedAt && Date.now() - verifiedAt < 30 * 60 * 1000) {
+        document.getElementById('age-gate').setAttribute('hidden', '');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="chrome-overlay">
+<div class="age-notice">This content is intended for persons over 18 years of age. Please drink responsibly.</div>
+
+<header class="site-header transparent-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-nama.html" class="active">About</a></li>
+          <li><a href="vina.html">Wines</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+        <div class="lang-switch lang-switch-mobile">
+          <a href="../o-nama.html">HR</a><span class="lang-switch-sep">·</span><a href="o-nama.html" class="active">EN</a><span class="lang-switch-sep">·</span><a href="../de/o-nama.html">DE</a>
+        </div>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img class="logo-full" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    </a>
+    <div class="nav-right">
+      <div class="wine-ticker">
+        <span class="wine-ticker-label" aria-hidden="true">We offer</span>
+        <a href="vina.html#grasevina" id="wine-ticker-text" title="View this wine in the Wine Gallery">Graševina</a>
+      </div>
+      <a class="degustacija-btn" href="https://wa.me/385989544621?text=Hello%21%20I%27m%20interested%20in%20booking%20a%20wine%20tasting." target="_blank" rel="noopener">Tasting</a>
+      <a class="whatsapp-btn" href="https://wa.me/385989544621?text=Hello%21%20We%27re%20interested%20in%20buying%20wine." target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+      <div class="lang-switch lang-switch-desktop">
+        <a href="../o-nama.html">HR</a><span class="lang-switch-sep">·</span><a href="o-nama.html" class="active">EN</a><span class="lang-switch-sep">·</span><a href="../de/o-nama.html">DE</a>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<section class="hero page-hero">
+  <img src="../images/wine-photo-grasevina.jpeg" class="hero-bg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Our story</span>
+    <h1>Meet Vinarija Soldo</h1>
+    <p class="lead">Three generations, one passion. Discover the family journey and the love of winemaking woven into every bottle we produce.</p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container grid-2 story-grid">
+    <div class="photo-stack">
+      <div class="photo-stack-item"><img src="../images/berba-vinograd-2.jpg" alt="Grape harvest in the Vinarija Soldo vineyard" data-alt-src="../images/obitelj-traktor.jpg" data-alt-alt="The Soldo family at the estate"></div>
+      <div class="photo-stack-item"><img src="../images/mirko-degustacija.jpg" alt="Mirko Soldo tasting wine in the vineyard" data-alt-src="../images/mystique-vinograd-pogled.jpg" data-alt-alt="Opening Soldo Mystique with a view of the vineyard"></div>
+    </div>
+    <div>
+      <span class="eyebrow-mark">For as long as we can remember</span>
+      <h2>A family rooted in the land</h2>
+      <div class="divider"></div>
+      <p>The story of Vinarija Soldo began long ago, when Gojko Soldo's father first planted vines on the fertile slopes of our region. What began as a small family vineyard is today a winery that nurtures the same spirit — hands-on work, respect for nature, and the patience wine deserves.</p>
+      <p>Today the winery is run by the third generation of the family, who combine traditional methods with modern winemaking know-how so that every bottle carries the authentic taste of our region.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">A journey through time</span>
+      <h2>Our history</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1989</div>
+        <div>
+          <h3>The first vineyard</h3>
+          <p>Gojko Soldo's father planted the first vines on the family estate, laying a solid foundation for our future winery.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2000</div>
+        <div>
+          <h3>Expanding the family estate</h3>
+          <p>Gojko Soldo expands the vineyards and dedicates himself fully to viticulture, taking the care of the vines to a new, more serious level.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2011</div>
+        <div>
+          <h3>The first bottle and wine cellar</h3>
+          <p>After years of dedicated work in the vineyard, the cellar was built and the family proudly presented the first bottle bearing the Soldo signature.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">Today</div>
+        <div>
+          <h3>The third generation continues the story</h3>
+          <p>With the expert signature of winemaker Mirko Soldo, we combine family tradition with modern winemaking. Today we happily welcome guests to our tasting room, with premium wines and a view of the slopes of the Kutjevo wine region.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our values</span>
+      <h2>What guides us</h2>
+    </div>
+    <div class="values-grid">
+      <div>
+        <i class="fa-solid fa-leaf value-icon" aria-hidden="true"></i>
+        <h3>Sustainability</h3>
+        <p>We care for the soil and the vineyard for future generations.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-heart value-icon" aria-hidden="true"></i>
+        <h3>Passion</h3>
+        <p>Every bottle is made with a sincere love of wine.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-seedling value-icon" aria-hidden="true"></i>
+        <h3>Authenticity</h3>
+        <p>We nurture native varieties and local tradition.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-award value-icon" aria-hidden="true"></i>
+        <h3>Excellence</h3>
+        <p>We make no compromises when it comes to quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container quote-block">
+    <blockquote id="rotating-quote">"The land gives to us, and we give back with patience."</blockquote>
+    <cite>The Soldo Family</cite>
+  </div>
+</section>
+
+<footer class="site-footer footer-centered">
+  <div class="container">
+    <img class="footer-mark" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    <div class="footer-grid">
+      <div>
+        <h4>Vinarija Soldo</h4>
+        <p>A family winery devoted to tradition, quality, and a love of winemaking.</p>
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" aria-label="Vinarija Soldo on Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100052597159627" target="_blank" rel="noopener" aria-label="Vinarija Soldo on Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-nama.html">About</a></li>
+          <li><a href="vina.html">Wines</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Majdanska ul. 53, 34335, Vetovo</li>
+          <li>+385 98 954 4621</li>
+          <li>soldovina@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy-group">
+        <span>&copy; <span id="year"></span> Vinarija Soldo. All rights reserved.</span>
+        <span class="footer-credit-line">Website by <a href="https://creolab-design.com/hr" target="_blank" rel="noopener" class="footer-credit"><img src="../images/creolab-logo.svg" alt="CreoLab" class="footer-credit-logo"></a></span>
+      </div>
+      <a href="#top" class="footer-top-link">Top</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">This website uses cookies to give you the best browsing experience. By continuing to use the site, you agree to their use.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn btn-outline" id="cookie-decline">Decline</button>
+      <button type="button" class="btn btn-primary" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

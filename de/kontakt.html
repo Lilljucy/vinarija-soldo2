@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — Vinarija Soldo</title>
+<meta name="description" content="Kontaktieren Sie die Vinarija Soldo für Besuche, Weinverkostungen und Weinbestellungen.">
+<link rel="canonical" href="https://vinarija-soldo.vercel.app/de/kontakt.html">
+<link rel="alternate" hreflang="hr" href="https://vinarija-soldo.vercel.app/kontakt.html">
+<link rel="alternate" hreflang="en" href="https://vinarija-soldo.vercel.app/en/kontakt.html">
+<link rel="alternate" hreflang="de" href="https://vinarija-soldo.vercel.app/de/kontakt.html">
+<link rel="alternate" hreflang="x-default" href="https://vinarija-soldo.vercel.app/kontakt.html">
+<link rel="icon" href="../images/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/fontawesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <img class="age-gate-logo" src="../images/soldo-logo-zlatni.svg" alt="">
+  </div>
+  <p class="age-gate-question">Sind Sie über 18 Jahre alt?</p>
+  <button type="button" class="age-gate-yes btn btn-primary" id="age-gate-yes">Ja</button>
+  <a href="https://www.google.com" class="age-gate-no btn btn-outline">Nein</a>
+  <p class="age-gate-disclaimer">Mit einem Klick auf die Schaltfläche bestätigen Sie, dass Sie volljährig sind. Diese Website enthält Informationen über alkoholische Getränke. Bitte trinken Sie verantwortungsbewusst.</p>
+</div>
+<script>
+  (function () {
+    try {
+      var verifiedAt = Number(localStorage.getItem('soldoAgeVerifiedAt'));
+      if (verifiedAt && Date.now() - verifiedAt < 30 * 60 * 1000) {
+        document.getElementById('age-gate').setAttribute('hidden', '');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="chrome-overlay">
+<div class="age-notice">Dieser Inhalt ist für Personen über 18 Jahre bestimmt. Bitte trinken Sie verantwortungsbewusst.</div>
+
+<header class="site-header transparent-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="o-nama.html">Über uns</a></li>
+          <li><a href="vina.html">Weine</a></li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+        <div class="lang-switch lang-switch-mobile">
+          <a href="../kontakt.html">HR</a><span class="lang-switch-sep">·</span><a href="../en/kontakt.html">EN</a><span class="lang-switch-sep">·</span><a href="kontakt.html" class="active">DE</a>
+        </div>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img class="logo-full" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    </a>
+    <div class="nav-right">
+      <div class="wine-ticker">
+        <span class="wine-ticker-label" aria-hidden="true">Wir bieten</span>
+        <a href="vina.html#grasevina" id="wine-ticker-text" title="Diesen Wein in der Weingalerie ansehen">Graševina</a>
+      </div>
+      <a class="degustacija-btn" href="https://wa.me/385989544621?text=Hallo%21%20Ich%20interessiere%20mich%20f%C3%BCr%20eine%20Weinverkostung." target="_blank" rel="noopener">Verkostung</a>
+      <a class="whatsapp-btn" href="https://wa.me/385989544621?text=Hallo%21%20Wir%20interessieren%20uns%20f%C3%BCr%20den%20Kauf%20von%20Wein." target="_blank" rel="noopener" aria-label="Kontaktieren Sie uns über WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+      <div class="lang-switch lang-switch-desktop">
+        <a href="../kontakt.html">HR</a><span class="lang-switch-sep">·</span><a href="../en/kontakt.html">EN</a><span class="lang-switch-sep">·</span><a href="kontakt.html" class="active">DE</a>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<section class="hero contact-hero">
+  <div class="contact-fields">
+    <div class="contact-field">
+      <span class="field-label">E-Mail</span>
+      <p class="field-value">soldovina@gmail.com</p>
+    </div>
+    <div class="contact-field">
+      <span class="field-label">Telefon</span>
+      <p class="field-value">+385 98 954 4621</p>
+    </div>
+    <div class="contact-field">
+      <span class="field-label">Adresse</span>
+      <p class="field-value">Majdanska ul. 53, 34335<br>Vetovo</p>
+    </div>
+    <div class="contact-field">
+      <span class="field-label">Öffnungszeiten</span>
+      <p class="field-value">Mo–Sa: 09:00–18:00<br>Sonntags nach Vereinbarung</p>
+    </div>
+    <div class="contact-field">
+      <span class="field-label">Soziale Netzwerke</span>
+      <div class="contact-social-icons">
+        <a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" aria-label="Vinarija Soldo auf Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100052597159627" target="_blank" rel="noopener" aria-label="Vinarija Soldo auf Facebook">
+          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="map-full map-dark">
+  <iframe
+    src="https://www.google.com/maps?q=Majdanska+ul.+53,+34335+Vetovo,+Kroatien&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Standort der Vinarija Soldo">
+  </iframe>
+</div>
+
+<footer class="site-footer footer-centered">
+  <div class="container">
+    <img class="footer-mark" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    <div class="footer-grid footer-grid-2">
+      <div>
+        <h4>Kontakt</h4>
+        <p>soldovina@gmail.com<br>+385 98 954 4621</p>
+      </div>
+      <div>
+        <h4>Adresse</h4>
+        <p>Majdanska ul. 53, 34335<br>Vetovo</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy-group">
+        <span>&copy; <span id="year"></span> Vinarija Soldo. Alle Rechte vorbehalten.</span>
+        <span class="footer-credit-line">Website erstellt von <a href="https://creolab-design.com/hr" target="_blank" rel="noopener" class="footer-credit"><img src="../images/creolab-logo.svg" alt="CreoLab" class="footer-credit-logo"></a></span>
+      </div>
+      <a href="#top" class="footer-top-link">Nach oben</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">Diese Website verwendet Cookies, um Ihnen das beste Nutzererlebnis zu bieten. Durch die weitere Nutzung der Website stimmen Sie deren Verwendung zu.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn btn-outline" id="cookie-decline">Ablehnen</button>
+      <button type="button" class="btn btn-primary" id="cookie-accept">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

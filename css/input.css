@@ -495,6 +495,46 @@
     @apply justify-self-end flex items-center gap-4;
   }
 
+  /* Language switcher — shown once in the desktop nav bar and once
+     inside the mobile dropdown card, since the two contexts have very
+     different available width (see max-width: 900px nav-wrap rules). */
+  .lang-switch {
+    @apply flex items-center gap-1.5;
+  }
+
+  .lang-switch a {
+    @apply text-[0.68rem] font-medium tracking-[1px] uppercase text-fog px-1.5 py-1 rounded;
+    transition: color 0.2s ease;
+  }
+
+  .lang-switch a:hover,
+  .lang-switch a.active {
+    @apply text-gold-light;
+  }
+
+  .lang-switch-sep {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.68rem;
+  }
+
+  .lang-switch-desktop {
+    display: none;
+  }
+
+  .lang-switch-mobile {
+    @apply mt-1.5 pt-2.5 justify-center border-t border-gold-border/20;
+  }
+
+  @media (min-width: 900px) {
+    .lang-switch-desktop {
+      display: flex;
+    }
+
+    .lang-switch-mobile {
+      display: none;
+    }
+  }
+
   .wine-ticker {
     @apply text-right max-w-[220px] overflow-hidden;
   }

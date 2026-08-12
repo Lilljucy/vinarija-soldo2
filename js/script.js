@@ -7,6 +7,42 @@ var AGE_GATE_KEY = 'soldoAgeVerifiedAt';
 var AGE_GATE_TTL_MS = 30 * 60 * 1000; // 30 minuta
 var COOKIE_CONSENT_KEY = 'soldoCookieConsent';
 
+// Jezik stranice se čita iz URL putanje (/en/..., /de/...), ne iz
+// <html lang>, jer AJAX prijelazi (swapPageContent) ne mijenjaju taj
+// atribut pri prelasku na drugu jezičnu verziju iste stranice.
+var QUOTES = {
+  hr: [
+    '"Vino je poezija zemlje pretočena u čašu."',
+    '"Sav misterij slavonske noći krije se u dubini crnog vina Mystique."',
+    '"Ne proizvodimo samo vino, mi stvaramo trenutke."',
+    '"Vino je umjetnost koja se dovršava tek kada se podijeli s pravim ljudima."',
+    '"Zemlja nam daje, mi joj vraćamo strpljenjem."',
+    '"Svaka boca čuva okus sunca i kamena s naših vinograda."'
+  ],
+  en: [
+    '"Wine is the poetry of the earth poured into a glass."',
+    '"All the mystery of a Slavonian night lies within the depths of Mystique red wine."',
+    '"We don\'t just make wine, we create moments."',
+    '"Wine is an art that is only complete once it is shared with the right people."',
+    '"The land gives to us, and we give back with patience."',
+    '"Every bottle preserves the taste of sun and stone from our vineyards."'
+  ],
+  de: [
+    '"Wein ist die Poesie der Erde, gegossen in ein Glas."',
+    '"Das ganze Geheimnis einer slawonischen Nacht verbirgt sich in der Tiefe des Rotweins Mystique."',
+    '"Wir produzieren nicht nur Wein, wir schaffen Momente."',
+    '"Wein ist eine Kunst, die erst vollendet ist, wenn man sie mit den richtigen Menschen teilt."',
+    '"Die Erde gibt uns, und wir geben ihr mit Geduld zurück."',
+    '"Jede Flasche bewahrt den Geschmack von Sonne und Stein aus unseren Weinbergen."'
+  ]
+};
+
+function getLocale() {
+  var seg = location.pathname.split('/').filter(Boolean)[0];
+  if (seg === 'en' || seg === 'de') return seg;
+  return 'hr';
+}
+
 function isInternalPageLink(href) {
   if (!href) return false;
   if (href.indexOf('#') === 0) return false;
@@ -85,14 +121,7 @@ function initPage() {
   }
   var quoteEl = document.getElementById('rotating-quote');
   if (quoteEl) {
-    var quotes = [
-      '"Vino je poezija zemlje pretočena u čašu."',
-      '"Sav misterij slavonske noći krije se u dubini crnog vina Mystique."',
-      '"Ne proizvodimo samo vino, mi stvaramo trenutke."',
-      '"Vino je umjetnost koja se dovršava tek kada se podijeli s pravim ljudima."',
-      '"Zemlja nam daje, mi joj vraćamo strpljenjem."',
-      '"Svaka boca čuva okus sunca i kamena s naših vinograda."'
-    ];
+    var quotes = QUOTES[getLocale()] || QUOTES.hr;
     var quoteIndex = 0;
     quoteInterval = setInterval(function () {
       var el = document.getElementById('rotating-quote');
@@ -303,6 +332,7 @@ function swapPageContent(html, url) {
   var parser = new DOMParser();
   var doc = parser.parseFromString(html, 'text/html');
   document.title = doc.title;
+  document.documentElement.lang = doc.documentElement.lang;
   document.body.className = doc.body.className;
   document.body.innerHTML = doc.body.innerHTML;
   runInlineScripts(document.body);

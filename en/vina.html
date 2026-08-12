@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wines — Vinarija Soldo</title>
+<meta name="description" content="Browse the wine selection from Vinarija Soldo — white, red, rosé, and sparkling wines.">
+<link rel="canonical" href="https://vinarija-soldo.vercel.app/en/vina.html">
+<link rel="alternate" hreflang="hr" href="https://vinarija-soldo.vercel.app/vina.html">
+<link rel="alternate" hreflang="en" href="https://vinarija-soldo.vercel.app/en/vina.html">
+<link rel="alternate" hreflang="de" href="https://vinarija-soldo.vercel.app/de/vina.html">
+<link rel="alternate" hreflang="x-default" href="https://vinarija-soldo.vercel.app/vina.html">
+<link rel="icon" href="../images/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/fontawesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <img class="age-gate-logo" src="../images/soldo-logo-zlatni.svg" alt="">
+  </div>
+  <p class="age-gate-question">Are you over 18 years old?</p>
+  <button type="button" class="age-gate-yes btn btn-primary" id="age-gate-yes">Yes, I am</button>
+  <a href="https://www.google.com" class="age-gate-no btn btn-outline">No</a>
+  <p class="age-gate-disclaimer">By clicking the button, you confirm that you are of legal age. This website contains information about alcoholic beverages. Please drink responsibly.</p>
+</div>
+<script>
+  (function () {
+    try {
+      var verifiedAt = Number(localStorage.getItem('soldoAgeVerifiedAt'));
+      if (verifiedAt && Date.now() - verifiedAt < 30 * 60 * 1000) {
+        document.getElementById('age-gate').setAttribute('hidden', '');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="chrome-overlay">
+<div class="age-notice">This content is intended for persons over 18 years of age. Please drink responsibly.</div>
+
+<header class="site-header transparent-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-nama.html">About</a></li>
+          <li><a href="vina.html" class="active">Wines</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+        <div class="lang-switch lang-switch-mobile">
+          <a href="../vina.html">HR</a><span class="lang-switch-sep">·</span><a href="vina.html" class="active">EN</a><span class="lang-switch-sep">·</span><a href="../de/vina.html">DE</a>
+        </div>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img class="logo-full" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    </a>
+    <div class="nav-right">
+      <div class="wine-ticker">
+        <span class="wine-ticker-label" aria-hidden="true">We offer</span>
+        <a href="vina.html#grasevina" id="wine-ticker-text" title="View this wine in the Wine Gallery">Graševina</a>
+      </div>
+      <a class="degustacija-btn" href="https://wa.me/385989544621?text=Hello%21%20I%27m%20interested%20in%20booking%20a%20wine%20tasting." target="_blank" rel="noopener">Tasting</a>
+      <a class="whatsapp-btn" href="https://wa.me/385989544621?text=Hello%21%20We%27re%20interested%20in%20buying%20wine." target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+      <div class="lang-switch lang-switch-desktop">
+        <a href="../vina.html">HR</a><span class="lang-switch-sep">·</span><a href="vina.html" class="active">EN</a><span class="lang-switch-sep">·</span><a href="../de/vina.html">DE</a>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<section class="hero page-hero">
+  <img src="../images/mystique-podrum-hrana.jpg" class="hero-bg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Our cellar</span>
+    <h1>Wine selection</h1>
+    <p class="lead">From bold red wines to crisp whites and rosé — every wine tells its own story.</p>
+  </div>
+</section>
+
+<section class="vinoteka-section section-light" id="vinoteka">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Wine gallery</span>
+    </div>
+    <div class="showcase-carousel" id="wine-showcase">
+      <button type="button" class="showcase-arrow showcase-arrow-prev" aria-label="Previous wine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="showcase-track">
+        <div class="showcase-slide is-bottle" data-name="Graševina" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/grasevina-boca-uspravna.png" alt="Graševina bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/grasevina-boca-nakosena.png" alt="Graševina bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Premium Graševina" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/premium-grasevina-uspravna.png" alt="Premium Graševina bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/premium-grasevina-nakosena.png" alt="Premium Graševina bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Rizvanac" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/rizvanac-uspravna.png" alt="Rizvanac bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/rizvanac-nakosena.png" alt="Rizvanac bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Manzoni" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/manzoni-uspravna.png" alt="Manzoni bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/manzoni-nakosena.png" alt="Manzoni bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Johaniter" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/johaniter-uspravna.png" alt="Johaniter bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/johaniter-nakosena.png" alt="Johaniter bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Hibernal" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/hibernal-uspravna.png" alt="Hibernal bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/hibernal-nakosena.png" alt="Hibernal bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Chardonnay" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/chardonnay-uspravna.png" alt="Chardonnay bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/chardonnay-nakosena.png" alt="Chardonnay bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Sauvignon" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/sauvignon-uspravna.png" alt="Sauvignon bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/sauvignon-nakosena.png" alt="Sauvignon bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Mirisni Traminac" data-region="White wine">
+          <img class="showcase-img showcase-img-default" src="../images/mirisni-traminac-uspravna.png" alt="Mirisni Traminac bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/mirisni-traminac-nakosena.png" alt="Mirisni Traminac bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Vetovo Cuvée" data-region="Red wine">
+          <img class="showcase-img showcase-img-default" src="../images/vetovo-cuvee-uspravna.png" alt="Vetovo Cuvée bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/vetovo-cuvee-nakosena.png" alt="Vetovo Cuvée bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Merlot" data-region="Red wine">
+          <img class="showcase-img showcase-img-default" src="../images/merlot-uspravna.png" alt="Merlot bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/merlot-nakosena.png" alt="Merlot bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Mystique" data-region="Red wine">
+          <img class="showcase-img showcase-img-default" src="../images/mystique-uspravna.png" alt="Mystique bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/mystique-nakosena.png" alt="Mystique bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Rosé" data-region="Rosé wine">
+          <img class="showcase-img showcase-img-default" src="../images/rose-uspravna.png" alt="Rosé bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/rose-nakosena.png" alt="Rosé bottle, tilted">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Lumina Brut" data-region="Sparkling wine">
+          <img class="showcase-img showcase-img-default" src="../images/lumina-brut-uspravna.png" alt="Lumina Brut bottle, upright">
+          <img class="showcase-img showcase-img-tilt" src="../images/lumina-brut-nakosena.png" alt="Lumina Brut bottle, tilted">
+        </div>
+      </div>
+      <button type="button" class="showcase-arrow showcase-arrow-next" aria-label="Next wine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="showcase-caption">
+      <h3>Graševina</h3>
+      <p>White wine</p>
+    </div>
+    <div class="showcase-dots"></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="wine-filters">
+      <button class="active" data-filter="sve">All</button>
+      <button data-filter="bijelo">White wines</button>
+      <button data-filter="crno">Red wines</button>
+      <button data-filter="rose">Rosé</button>
+      <button data-filter="pjenusac">Sparkling wines</button>
+    </div>
+
+    <div class="wine-grid wine-grid-4" id="wine-grid">
+      <div class="wine-card" data-type="bijelo" id="grasevina">
+        <div class="wine-image bottle-photo"><img src="../images/grasevina-boca-uspravna.png" alt="Graševina bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Graševina</h3>
+          <ul class="price-list">
+            <li><span>1 L</span><span>€4.50 + VAT</span></li>
+            <li><span>Bulk</span><span>€3.50 + VAT</span></li>
+            <li><span>0.75 L (screw cap)</span><span>€5.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Offers freshness with aromas of green apple, citrus, and subtle floral notes. Balanced and mineral, with a long, dry finish. A perfect choice for festive occasions and light dishes.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="premium-grasevina">
+        <div class="wine-image bottle-photo"><img src="../images/premium-grasevina-uspravna.png" alt="Premium Graševina bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Premium Graševina</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (cork)</span><span>€8.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Selected from the best sites in the Kutjevo wine region, carefully crafted from the finest grapes. This wine exudes freshness, minerality, and the complexity that comes from limited yields and selective harvesting.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="rizvanac">
+        <div class="wine-image bottle-photo"><img src="../images/rizvanac-uspravna.png" alt="Rizvanac bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Rizvanac</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€5.00 + VAT</span></li>
+          </ul>
+          <p class="desc">A light white wine known for its freshness and easy drinkability. Pale yellow in color, fresh and fruity, often reminiscent of apple, citrus, and delicate floral notes. It is light-bodied, usually with 10–12% alcohol. Best enjoyed young, served at 8–10°C.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="manzoni">
+        <div class="wine-image bottle-photo"><img src="../images/manzoni-uspravna.png" alt="Manzoni bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Manzoni</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€6.00 + VAT</span></li>
+          </ul>
+          <p class="desc">A variety created by crossing Pinot Blanc and Riesling. Pale yellow in color, with an expressive, refined bouquet of apple, pear, floral, and subtly mineral notes. The wine is harmonious and fresh, full-bodied.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="johaniter">
+        <div class="wine-image bottle-photo"><img src="../images/johaniter-uspravna.png" alt="Johaniter bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Johaniter</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€6.00 + VAT</span></li>
+          </ul>
+          <p class="desc">A white wine variety developed in Germany by crossing Riesling with other disease-resistant varieties. It belongs to the PIWI group of fungus-resistant grapes, which makes it a popular choice for organic wine production.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="hibernal">
+        <div class="wine-image bottle-photo"><img src="../images/hibernal-uspravna.png" alt="Divinus Hibernal bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Hibernal</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€8.00 + VAT</span></li>
+          </ul>
+          <p class="desc">A resistant variety with a distinctive character — a fresh, mineral wine with floral and fruity notes.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="chardonnay">
+        <div class="wine-image bottle-photo"><img src="../images/chardonnay-uspravna.png" alt="Soldo Chardonnay bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Chardonnay</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€6.00 + VAT</span></li>
+          </ul>
+          <p class="desc">An elegant wine with notes of citrus and butter, gently rounded on the palate.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="sauvignon">
+        <div class="wine-image bottle-photo"><img src="../images/sauvignon-uspravna.png" alt="Sauvignon bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Sauvignon</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€7.00 + VAT</span></li>
+          </ul>
+          <p class="desc">An aromatic white variety known for its pronounced notes of citrus, elderflower, and green apple. The wine is dry, with lively acidity and a refreshing character. An ideal choice with fish, seafood, and goat cheese.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="bijelo" id="mirisni-traminac">
+        <div class="wine-image bottle-photo"><img src="../images/mirisni-traminac-uspravna.png" alt="Mirisni Traminac bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">White wine</span>
+          <h3>Mirisni Traminac</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€7.00 + VAT</span></li>
+          </ul>
+          <p class="desc">One of the most aromatic white wines, highly recognizable for its intense bouquet and rich flavor. Golden yellow in color, with a scent reminiscent of rose blossom.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno" id="vetovo-cuvee">
+        <div class="wine-image bottle-photo"><img src="../images/vetovo-cuvee-uspravna.png" alt="Vetovo Cuvée bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">Red wine</span>
+          <h3>Vetovo Cuvée</h3>
+          <ul class="price-list">
+            <li><span>1 L</span><span>€4.50 + VAT</span></li>
+            <li><span>Bulk</span><span>€3.50 + VAT</span></li>
+            <li><span>0.75 L (screw cap)</span><span>€5.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Our signature blend of red varieties — soft and round, with notes of dark fruit.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno" id="merlot">
+        <div class="wine-image bottle-photo"><img src="../images/merlot-uspravna.png" alt="Merlot bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">Red wine</span>
+          <h3>Merlot</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€7.00 + VAT</span></li>
+          </ul>
+          <p class="desc">A premium dry wine, rich in aromas of blackcurrant and plum. A wine with balanced acidity and a subtle residual sweetness, finishing with a long aftertaste.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="crno" id="mystique">
+        <div class="wine-image bottle-photo"><img src="../images/mystique-uspravna.png" alt="Mystique bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">Red wine</span>
+          <h3>Mystique</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€8.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Our most intriguing red wine — layered, with notes of dark berries and spice.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="rose" id="rose">
+        <div class="wine-image bottle-photo"><img src="../images/rose-uspravna.png" alt="Rosé bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">Rosé</span>
+          <h3>Rosé</h3>
+          <ul class="price-list">
+            <li><span>0.75 L (screw cap)</span><span>€6.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Made from Pinot Noir. The wine is light and fresh, recommended for warmer weather. Alongside its elegant salmon-pink color, it is adorned with beautiful aromas such as raspberry, strawberry, and floral notes.</p>
+        </div>
+      </div>
+      <div class="wine-card" data-type="pjenusac" id="lumina-brut">
+        <div class="wine-image bottle-photo"><img src="../images/lumina-brut-uspravna.png" alt="Lumina Brut bottle"></div>
+        <div class="wine-body">
+          <span class="wine-type">Sparkling wine</span>
+          <h3>Lumina Brut</h3>
+          <ul class="price-list">
+            <li><span>2022 Harvest</span><span>€15.00 + VAT</span></li>
+          </ul>
+          <p class="desc">Fine bubbles and fresh aromas of apple and citrus — perfect for celebratory moments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-forest">
+  <div class="container quote-block">
+    <blockquote id="rotating-quote">"Every bottle preserves the taste of sun and stone from our vineyards."</blockquote>
+    <cite>The Soldo Family</cite>
+  </div>
+</section>
+
+<footer class="site-footer footer-centered">
+  <div class="container">
+    <img class="footer-mark" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    <div class="footer-grid">
+      <div>
+        <h4>Vinarija Soldo</h4>
+        <p>A family winery devoted to tradition, quality, and a love of winemaking.</p>
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" aria-label="Vinarija Soldo on Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100052597159627" target="_blank" rel="noopener" aria-label="Vinarija Soldo on Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-nama.html">About</a></li>
+          <li><a href="vina.html">Wines</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Majdanska ul. 53, 34335, Vetovo</li>
+          <li>+385 98 954 4621</li>
+          <li>soldovina@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy-group">
+        <span>&copy; <span id="year"></span> Vinarija Soldo. All rights reserved.</span>
+        <span class="footer-credit-line">Website by <a href="https://creolab-design.com/hr" target="_blank" rel="noopener" class="footer-credit"><img src="../images/creolab-logo.svg" alt="CreoLab" class="footer-credit-logo"></a></span>
+      </div>
+      <a href="#top" class="footer-top-link">Top</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">This website uses cookies to give you the best browsing experience. By continuing to use the site, you agree to their use.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn btn-outline" id="cookie-decline">Decline</button>
+      <button type="button" class="btn btn-primary" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-images">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

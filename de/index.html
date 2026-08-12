@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinarija Soldo — Weinregion Kutjevo</title>
+<meta name="description" content="Vinarija Soldo — ein Familienweingut mit langer Tradition im Weinbau und der Produktion erstklassiger Weine.">
+<link rel="canonical" href="https://vinarija-soldo.vercel.app/de/index.html">
+<link rel="alternate" hreflang="hr" href="https://vinarija-soldo.vercel.app/index.html">
+<link rel="alternate" hreflang="en" href="https://vinarija-soldo.vercel.app/en/index.html">
+<link rel="alternate" hreflang="de" href="https://vinarija-soldo.vercel.app/de/index.html">
+<link rel="alternate" hreflang="x-default" href="https://vinarija-soldo.vercel.app/index.html">
+<link rel="icon" href="../images/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/fontawesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark-footer">
+
+<div class="age-gate" id="age-gate">
+  <div class="age-gate-mark" aria-hidden="true">
+    <img class="age-gate-logo" src="../images/soldo-logo-zlatni.svg" alt="">
+  </div>
+  <p class="age-gate-question">Sind Sie über 18 Jahre alt?</p>
+  <button type="button" class="age-gate-yes btn btn-primary" id="age-gate-yes">Ja</button>
+  <a href="https://www.google.com" class="age-gate-no btn btn-outline">Nein</a>
+  <p class="age-gate-disclaimer">Mit einem Klick auf die Schaltfläche bestätigen Sie, dass Sie volljährig sind. Diese Website enthält Informationen über alkoholische Getränke. Bitte trinken Sie verantwortungsbewusst.</p>
+</div>
+<script>
+  (function () {
+    try {
+      var verifiedAt = Number(localStorage.getItem('soldoAgeVerifiedAt'));
+      if (verifiedAt && Date.now() - verifiedAt < 30 * 60 * 1000) {
+        document.getElementById('age-gate').setAttribute('hidden', '');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
+
+<div class="chrome-overlay">
+<div class="age-notice">Dieser Inhalt ist für Personen über 18 Jahre bestimmt. Bitte trinken Sie verantwortungsbewusst.</div>
+
+<header class="site-header transparent-header">
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <button class="nav-toggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Startseite</a></li>
+          <li><a href="o-nama.html">Über uns</a></li>
+          <li><a href="vina.html">Weine</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div class="lang-switch lang-switch-mobile">
+          <a href="../index.html">HR</a><span class="lang-switch-sep">·</span><a href="../en/index.html">EN</a><span class="lang-switch-sep">·</span><a href="index.html" class="active">DE</a>
+        </div>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <img class="logo-full" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    </a>
+    <div class="nav-right">
+      <div class="wine-ticker">
+        <span class="wine-ticker-label" aria-hidden="true">Wir bieten</span>
+        <a href="vina.html#grasevina" id="wine-ticker-text" title="Diesen Wein in der Weingalerie ansehen">Graševina</a>
+      </div>
+      <a class="degustacija-btn" href="https://wa.me/385989544621?text=Hallo%21%20Ich%20interessiere%20mich%20f%C3%BCr%20eine%20Weinverkostung." target="_blank" rel="noopener">Verkostung</a>
+      <a class="whatsapp-btn" href="https://wa.me/385989544621?text=Hallo%21%20Wir%20interessieren%20uns%20f%C3%BCr%20den%20Kauf%20von%20Wein." target="_blank" rel="noopener" aria-label="Kontaktieren Sie uns über WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+      <div class="lang-switch lang-switch-desktop">
+        <a href="../index.html">HR</a><span class="lang-switch-sep">·</span><a href="../en/index.html">EN</a><span class="lang-switch-sep">·</span><a href="index.html" class="active">DE</a>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<section class="hero">
+  <video
+    class="hero-bg"
+    src="../images/video/hero-intro.mp4"
+    poster="../images/video/hero-intro-poster.jpg"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline="true"
+    disablepictureinpicture
+    preload="auto"
+    aria-hidden="true"></video>
+  <div class="hero-tagline">
+    <p class="hero-tagline-script">...wo der Wein eine Seele hat</p>
+    <p class="hero-tagline-welcome">Willkommen</p>
+  </div>
+</section>
+
+<section class="pb-10 md:pb-12">
+  <div class="container">
+    <div class="section-heading intro-heading">
+      <h1>Tradition der Weinregion Kutjevo<span class="title-break">Vinarija Soldo, Vetovo</span></h1>
+      <p class="lead">An den sonnenverwöhnten Hängen der Weinregion Kutjevo kreieren wir mit Stolz Weine, die die ganze Pracht unseres Goldenen Slawoniens widerspiegeln.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pt-10 md:pt-12">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Empfehlungen</span>
+      <h2>Entdecken Sie unsere Weine</h2>
+    </div>
+    <div class="showcase-carousel" id="wine-showcase-home">
+      <button type="button" class="showcase-arrow showcase-arrow-prev" aria-label="Vorheriger Wein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="showcase-track">
+        <div class="showcase-slide is-bottle" data-name="Graševina" data-region="Weißwein">
+          <img class="showcase-img showcase-img-default" src="../images/grasevina-boca-uspravna.png" alt="Graševina-Flasche, aufrecht">
+          <img class="showcase-img showcase-img-tilt" src="../images/grasevina-boca-nakosena.png" alt="Graševina-Flasche, geneigt">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Mystique" data-region="Rotwein">
+          <img class="showcase-img showcase-img-default" src="../images/mystique-uspravna.png" alt="Mystique-Flasche, aufrecht">
+          <img class="showcase-img showcase-img-tilt" src="../images/mystique-nakosena.png" alt="Mystique-Flasche, geneigt">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Rosé" data-region="Roséwein">
+          <img class="showcase-img showcase-img-default" src="../images/rose-uspravna.png" alt="Rosé-Flasche, aufrecht">
+          <img class="showcase-img showcase-img-tilt" src="../images/rose-nakosena.png" alt="Rosé-Flasche, geneigt">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Chardonnay" data-region="Weißwein">
+          <img class="showcase-img showcase-img-default" src="../images/chardonnay-uspravna.png" alt="Chardonnay-Flasche, aufrecht">
+          <img class="showcase-img showcase-img-tilt" src="../images/chardonnay-nakosena.png" alt="Chardonnay-Flasche, geneigt">
+        </div>
+        <div class="showcase-slide is-bottle" data-name="Lumina Brut" data-region="Schaumwein">
+          <img class="showcase-img showcase-img-default" src="../images/lumina-brut-uspravna.png" alt="Lumina Brut-Flasche, aufrecht">
+          <img class="showcase-img showcase-img-tilt" src="../images/lumina-brut-nakosena.png" alt="Lumina Brut-Flasche, geneigt">
+        </div>
+      </div>
+      <button type="button" class="showcase-arrow showcase-arrow-next" aria-label="Nächster Wein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="showcase-caption">
+      <h3>Graševina</h3>
+      <p>Weißwein</p>
+    </div>
+    <div class="showcase-dots"></div>
+    <div class="text-center mt-12">
+      <a href="vina.html" class="btn btn-dark">Alle Weine ansehen</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="naspriva-grid">
+    <div class="photo-stack photo-stack-lg" id="naspriva-photo-stack">
+      <div class="photo-stack-item"><img src="../images/vinograd-papuk.jpg" alt="Weinberge der Vinarija Soldo an den Hängen des Papuk" data-alt-src="../images/mystique-otvaranje.jpg" data-alt-alt="Öffnen einer Flasche Soldo Mystique"></div>
+      <div class="photo-stack-item"><img src="../images/mirko-degustacija.jpg" alt="Mirko Soldo verkostet Wein im Weinberg" data-alt-src="../images/degustacija-zalogaj.jpg" data-alt-alt="Ein Verkostungshäppchen zu Soldo-Wein"></div>
+      <div class="photo-stack-item"><img src="../images/mystique-cep.jpg" alt="Entkorken einer Flasche Soldo Mystique" data-alt-src="../images/degustacija-odozgo.jpg" data-alt-alt="Ein Käse- und Verkostungsbrett zu Soldo-Wein"></div>
+    </div>
+    <div>
+      <span class="eyebrow-mark">Unsere Geschichte</span>
+      <h2>Eine Tradition, die durch jede Flasche fließt</h2>
+      <div class="divider"></div>
+      <p>Unsere Liebe zum slawonischen Land und zum Weinstock wird in der Familie Soldo seit Generationen weitergegeben. Unsere Weinberge liegen an den sonnenverwöhnten Hängen der Weinregion Kutjevo, wo mineralreicher Boden und reichlich Sonne perfekte Bedingungen für Trauben von außergewöhnlicher Qualität schaffen.</p>
+      <p>Jede Flasche, die unseren Keller verlässt, trägt das Zeichen engagierter Arbeit, Geduld und tiefen Respekts vor der Tradition des Goldenen Slawoniens — mit einem Hauch moderner Weinbaukunst.</p>
+      <a href="o-nama.html" class="btn btn-primary">Mehr über uns erfahren</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-forest">
+  <div class="container visit-band">
+    <div>
+      <span class="eyebrow-mark">Besuchen Sie unseren Weinkeller</span>
+      <h2>Buchen Sie eine Verkostung und Kellerführung</h2>
+      <div class="divider"></div>
+      <p>Nach vorheriger Anmeldung organisieren wir geführte Verkostungen mit herrlichem Blick auf die Weinberge. Reservieren Sie Ihren Termin, besichtigen Sie unseren Keller und erleben Sie Wein auf ganz neue Weise.</p>
+      <ul class="hours-table">
+        <li><span>Montag – Samstag</span><span>09:00 – 18:00</span></li>
+        <li><span>Sonntag</span><span>Nach Vereinbarung</span></li>
+      </ul>
+      <div class="visit-buttons">
+        <a href="kontakt.html" class="btn btn-primary">Kontaktieren Sie uns</a>
+        <a href="https://wa.me/385989544621?text=Hallo%21%20Ich%20interessiere%20mich%20f%C3%BCr%20eine%20Weinverkostung." target="_blank" rel="noopener" class="btn btn-outline">Verkostung buchen</a>
+      </div>
+    </div>
+    <div class="visit-image">
+      <img src="../images/degustacija-stol.jpg" alt="Verkostungstisch mit Soldo-Weinen und Häppchen">
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container quote-block">
+    <blockquote id="rotating-quote">"Wein ist die Poesie der Erde, gegossen in ein Glas."</blockquote>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container experience-split">
+    <div>
+      <span class="eyebrow-mark">Warum Soldo</span>
+      <h2>Von der Traube zur Perfektion im Glas</h2>
+      <div class="divider"></div>
+      <p>Wenn es um Qualität geht, machen wir keine Kompromisse. Jede Flasche mit der Signatur Soldo ist das Ergebnis sorgfältiger Handlese, eines tiefen Verständnisses unseres Landes und einer grenzenlosen Liebe zum Weinbau. Wir glauben, dass Wein im Weinberg entsteht. Wir haben gelernt, der Natur zuzuhören und die Gaben des slawonischen Bodens mit engagierter Familienarbeit zu verbinden. Das Ergebnis sind Weine mit authentischem Charakter, die wir mit Stolz ausschenken.</p>
+      <a href="o-nama.html" class="btn btn-primary">Mehr über uns erfahren</a>
+    </div>
+    <div class="photo-stack photo-stack-lg" id="zasto-photo-stack">
+      <div class="photo-stack-item"><img src="../images/grozdje-crno.jpg" alt="Rote Rebsorten" data-alt-src="../images/mystique-toceno.jpg" data-alt-alt="Einschenken von Soldo Mystique ins Glas"></div>
+      <div class="photo-stack-item"><img src="../images/berba-vinograd-1.jpg" alt="Handlese der Trauben im Weinberg Soldo" data-alt-src="../images/divinus-led.jpg" data-alt-alt="Flaschen Divinus Hibernal und Johanniter auf Eis"></div>
+      <div class="photo-stack-item"><img src="../images/grozdje-bijelo.jpg" alt="Weiße Rebsorten" data-alt-src="../images/mystique-sir-degustacija.jpg" data-alt-alt="Soldo Mystique mit einem Käseverkostungsbrett"></div>
+    </div>
+  </div>
+</section>
+
+<section class="instagram-section section-forest">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Vinarija Soldo in den sozialen Medien</h2>
+    </div>
+    <div class="instagram-grid">
+      <a class="instagram-tile" href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">
+        <img src="../images/berba-vinograd-1.jpg" alt="Traubenernte im Weinberg Soldo">
+        <span class="instagram-tile-overlay">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </span>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">
+        <img src="../images/lumina-brut-boca.jpg" alt="Soldo Lumina Brut Schaumwein auf Instagram">
+        <span class="instagram-tile-overlay">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </span>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">
+        <img src="../images/obitelj-traktor.jpg" alt="Die Familie Soldo auf dem Weingut">
+        <span class="instagram-tile-overlay">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </span>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener">
+        <img src="../images/divinus-toceno.jpg" alt="Ausschenken von Soldo-Wein mit Verkostungsbrett">
+        <span class="instagram-tile-overlay">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+    <div class="text-center mt-10">
+      <a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" class="btn btn-dark">Folgen Sie uns auf Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer footer-centered">
+  <div class="container">
+    <img class="footer-mark" src="../images/soldo-logo-zlatni.svg" alt="Vinarija Soldo logo">
+    <div class="footer-grid">
+      <div>
+        <h4>Vinarija Soldo</h4>
+        <p>Ein Familienweingut, das sich der Tradition, Qualität und Liebe zum Weinbau verschrieben hat.</p>
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/vinarija_soldo/" target="_blank" rel="noopener" aria-label="Vinarija Soldo auf Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100052597159627" target="_blank" rel="noopener" aria-label="Vinarija Soldo auf Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="o-nama.html">Über uns</a></li>
+          <li><a href="vina.html">Weine</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Majdanska ul. 53, 34335, Vetovo</li>
+          <li>+385 98 954 4621</li>
+          <li>soldovina@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy-group">
+        <span>&copy; <span id="year"></span> Vinarija Soldo. Alle Rechte vorbehalten.</span>
+        <span class="footer-credit-line">Website erstellt von <a href="https://creolab-design.com/hr" target="_blank" rel="noopener" class="footer-credit"><img src="../images/creolab-logo.svg" alt="CreoLab" class="footer-credit-logo"></a></span>
+      </div>
+      <a href="#top" class="footer-top-link">Nach oben</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">Diese Website verwendet Cookies, um Ihnen das beste Nutzererlebnis zu bieten. Durch die weitere Nutzung der Website stimmen Sie deren Verwendung zu.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn btn-outline" id="cookie-decline">Ablehnen</button>
+      <button type="button" class="btn btn-primary" id="cookie-accept">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
