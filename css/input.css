@@ -1484,7 +1484,7 @@
   }
 
   .contact-social-icons a {
-    @apply flex items-center justify-center w-[38px] h-[38px] flex-shrink-0 rounded-full border border-gold-border/25 text-gold-light bg-gold/[0.08];
+    @apply flex items-center justify-center w-[54px] h-[54px] flex-shrink-0 rounded-full border border-gold-border/25 text-gold-light bg-gold/[0.08];
     transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, color 0.25s ease;
   }
 
@@ -1494,7 +1494,7 @@
   }
 
   .contact-social-icons a i {
-    @apply text-[1.05rem];
+    @apply text-[1.5rem];
   }
 
   .map-full {
