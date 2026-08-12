@@ -1726,22 +1726,22 @@
       grid-area: whatsapp;
       justify-self: end;
     }
-    .wine-ticker {
+    /* Single shared divider line above the whole row, instead of each
+       of the two elements drawing its own (which left a gap in the
+       middle since they're independently sized/positioned). */
+    .mobile-offer-row {
       grid-area: ticker;
-      justify-self: end;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+      border-top: 1px solid rgba(201, 162, 75, 0.25);
+    }
+    .wine-ticker {
       max-width: none;
       text-align: right;
-      padding-top: 8px;
-      border-top: 1px solid rgba(201, 162, 75, 0.25);
     }
-    .lang-switch-ticker-row {
-      grid-area: ticker;
-      justify-self: start;
-      padding-top: 8px;
-      border-top: 1px solid rgba(201, 162, 75, 0.25);
-    }
-    body.nav-open .wine-ticker,
-    body.nav-open .lang-switch-ticker-row {
+    body.nav-open .mobile-offer-row {
       visibility: hidden;
       pointer-events: none;
     }
