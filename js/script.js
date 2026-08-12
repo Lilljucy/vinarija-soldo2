@@ -89,7 +89,9 @@ function initPage() {
       '"Vino je poezija zemlje pretočena u čašu."',
       '"Sav misterij slavonske noći krije se u dubini crnog vina Mystique."',
       '"Ne proizvodimo samo vino, mi stvaramo trenutke."',
-      '"Vino je umjetnost koja se dovršava tek kada se podijeli s pravim ljudima."'
+      '"Vino je umjetnost koja se dovršava tek kada se podijeli s pravim ljudima."',
+      '"Zemlja nam daje, mi joj vraćamo strpljenjem."',
+      '"Svaka boca čuva okus sunca i kamena s naših vinograda."'
     ];
     var quoteIndex = 0;
     quoteInterval = setInterval(function () {

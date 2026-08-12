@@ -1479,6 +1479,24 @@
     @apply text-gold-light;
   }
 
+  .contact-social-icons {
+    @apply flex items-center justify-center gap-3;
+  }
+
+  .contact-social-icons a {
+    @apply flex items-center justify-center w-[38px] h-[38px] flex-shrink-0 rounded-full border border-gold-border/25 text-gold-light bg-gold/[0.08];
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+  }
+
+  .contact-social-icons a:hover,
+  .contact-social-icons a:focus-visible {
+    @apply border-gold bg-gold/[0.18] text-gold -translate-y-0.5;
+  }
+
+  .contact-social-icons a i {
+    @apply text-[1.05rem];
+  }
+
   .map-full {
     @apply w-full h-[420px] max-[720px]:h-[320px] border-t border-gold-border/25;
   }
