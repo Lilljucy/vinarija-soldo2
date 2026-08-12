@@ -356,7 +356,7 @@
   }
 
   .nav-left {
-    @apply relative justify-self-start flex items-center;
+    @apply relative justify-self-start flex items-center gap-3;
   }
 
   .logo {
@@ -495,9 +495,11 @@
     @apply justify-self-end flex items-center gap-4;
   }
 
-  /* Language switcher — shown once in the desktop nav bar and once
-     inside the mobile dropdown card, since the two contexts have very
-     different available width (see max-width: 900px nav-wrap rules). */
+  /* Language switcher — a compact "HR · EN · DE" strip that sits in
+     the header itself, never inside the hamburger dropdown. Two
+     placements swap by breakpoint: lang-switch-bar next to the
+     hamburger below 900px, lang-switch-desktop in the right-hand nav
+     bar at 900px+ (where the hamburger disappears entirely). */
   .lang-switch {
     @apply flex items-center gap-1.5;
   }
@@ -517,21 +519,33 @@
     font-size: 0.68rem;
   }
 
-  .lang-switch-desktop {
+  /* Three instances, exactly one visible at a time: -desktop sits in
+     the right-hand nav bar once the hamburger is gone (900px+);
+     -bar sits next to the hamburger where there's still slack
+     (640–899px); -ticker-row shares the wine-ticker's own full-width
+     row (below 640px, where row 1 is already full — see the
+     max-width: 640px nav-wrap rules). */
+  .lang-switch-desktop,
+  .lang-switch-bar,
+  .lang-switch-ticker-row {
     display: none;
-  }
-
-  .lang-switch-mobile {
-    @apply mt-1.5 pt-2.5 justify-center border-t border-gold-border/20;
   }
 
   @media (min-width: 900px) {
     .lang-switch-desktop {
       display: flex;
     }
+  }
 
-    .lang-switch-mobile {
-      display: none;
+  @media (min-width: 640px) and (max-width: 899px) {
+    .lang-switch-bar {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .lang-switch-ticker-row {
+      display: flex;
     }
   }
 
@@ -1714,12 +1728,20 @@
     }
     .wine-ticker {
       grid-area: ticker;
+      justify-self: end;
       max-width: none;
-      text-align: center;
+      text-align: right;
       padding-top: 8px;
       border-top: 1px solid rgba(201, 162, 75, 0.25);
     }
-    body.nav-open .wine-ticker {
+    .lang-switch-ticker-row {
+      grid-area: ticker;
+      justify-self: start;
+      padding-top: 8px;
+      border-top: 1px solid rgba(201, 162, 75, 0.25);
+    }
+    body.nav-open .wine-ticker,
+    body.nav-open .lang-switch-ticker-row {
       visibility: hidden;
       pointer-events: none;
     }
