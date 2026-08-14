@@ -1186,6 +1186,7 @@
   .showcase-carousel {
     @apply relative flex items-center justify-center select-none overflow-hidden;
     height: 580px;
+    touch-action: pan-y;
   }
 
   .showcase-track {
@@ -1324,10 +1325,9 @@
   }
 
   @media (max-width: 640px) {
-    .showcase-arrow svg {
-      width: 12px;
-      height: 12px;
-      stroke-width: 3;
+    /* Ispod ovog praga vina se listaju prstom (swipe), ne strelicama */
+    .showcase-arrow {
+      display: none;
     }
   }
 
@@ -1578,6 +1578,10 @@
   @media (max-width: 900px) {
     .footer-grid {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+    /* Treći stupac (Kontakt) razvučen preko oba stupca i centriran ispod njih */
+    .footer-grid > div:nth-child(3) {
+      grid-column: 1 / -1;
     }
   }
 

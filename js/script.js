@@ -226,6 +226,8 @@ function initPage() {
     var regionEl = wrap.querySelector('.showcase-caption p');
     var current = 0;
 
+    var isSwipe = false;
+
     var dots = slides.map(function (slide, i) {
       var dot = document.createElement('button');
       dot.type = 'button';
@@ -233,7 +235,10 @@ function initPage() {
       dot.setAttribute('aria-label', 'Prikaži vino ' + (i + 1));
       dot.addEventListener('click', function () { goTo(i); });
       dotsWrap.appendChild(dot);
-      slide.addEventListener('click', function () { goTo(i); });
+      slide.addEventListener('click', function () {
+        if (isSwipe) return;
+        goTo(i);
+      });
       return dot;
     });
 
@@ -267,6 +272,36 @@ function initPage() {
 
     if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+    // Listanje prstom (swipe) na dodirnim ekranima — zamjenjuje strelice na mobitelu
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var SWIPE_THRESHOLD = 40;
+
+    carousel.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwipe = false;
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', function (e) {
+      if (!e.touches.length) return;
+      var dx = e.touches[0].clientX - touchStartX;
+      var dy = e.touches[0].clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        isSwipe = true;
+      }
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+      if (!isSwipe) return;
+      var endX = e.changedTouches.length ? e.changedTouches[0].clientX : touchStartX;
+      var dx = endX - touchStartX;
+      if (Math.abs(dx) > SWIPE_THRESHOLD) {
+        if (dx < 0) goTo(current + 1); else goTo(current - 1);
+      }
+    });
 
     render();
   });
