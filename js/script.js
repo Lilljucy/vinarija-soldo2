@@ -299,7 +299,7 @@ function initPage() {
       var endX = e.changedTouches.length ? e.changedTouches[0].clientX : touchStartX;
       var dx = endX - touchStartX;
       if (Math.abs(dx) > SWIPE_THRESHOLD) {
-        if (dx < 0) goTo(current + 1); else goTo(current - 1);
+        if (dx < 0) goTo(current - 1); else goTo(current + 1);
       }
     });
 
