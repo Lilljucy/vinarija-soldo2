@@ -249,6 +249,17 @@ function initPage() {
         offset = ((offset % n) + n) % n;
         if (offset > n / 2) offset -= n;
         var abs = Math.abs(offset);
+        // Slajdovi dalje od abs 3 su uvijek opacity 0 (nevidljivi) prije i poslije
+        // ovog renderiranja, pa se potpuno uklanjaju iz layout/paint procesa —
+        // bez toga vitrina s puno vina (npr. 14 na stranici Vina) mora animirati
+        // sve boce odjednom umjesto samo one koje se stvarno vide, pa je tranzicija
+        // trzavija nego na početnoj s manje boca. Ovime animacija ostaje ista, samo
+        // se ne troše resursi na boce koje se ionako ne vide.
+        if (abs > 3) {
+          slide.style.display = 'none';
+          return;
+        }
+        slide.style.display = '';
         var scale, tx, opacity, z;
         if (abs === 0) { scale = 1; tx = 0; opacity = 1; z = 10; }
         else if (abs === 1) { scale = 0.72; tx = offset > 0 ? -62 : 62; opacity = 0.55; z = 5; }
