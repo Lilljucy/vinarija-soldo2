@@ -270,8 +270,8 @@ function initPage() {
       render();
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current + 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current - 1); });
 
     // Listanje prstom (swipe) na dodirnim ekranima — zamjenjuje strelice na mobitelu
     var touchStartX = 0;
