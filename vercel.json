@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "vinarija-soldo.vercel.app"
+        }
+      ],
+      "destination": "https://vinarija-soldo.hr/:path*",
+      "permanent": true
+    }
+  ]
+}
