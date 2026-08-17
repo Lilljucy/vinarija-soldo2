@@ -840,6 +840,56 @@
     @apply block uppercase tracking-[3px] text-gold text-[0.8rem] mb-2.5;
   }
 
+  /* Legal page body copy (Politika privatnosti / Uvjeti korištenja) —
+     narrower reading column than the standard .container so long-form
+     text doesn't stretch edge to edge on wide screens. */
+  .legal-content {
+    @apply max-w-[760px] mx-auto;
+  }
+
+  .legal-content .legal-updated {
+    @apply text-[0.8rem] text-gold uppercase tracking-[2px] mb-14;
+  }
+
+  /* Nested <section> tags mark up each numbered clause semantically, but
+     must not inherit the sitewide section { py-24 md:py-32 } base rule
+     meant for full-page bands. */
+  .legal-content section {
+    @apply py-0;
+  }
+
+  .legal-content section + section {
+    @apply mt-12;
+  }
+
+  .legal-content h2 {
+    @apply text-gold-light text-[1.35rem] mb-4;
+  }
+
+  .legal-content h3 {
+    @apply text-white text-[1.05rem] mb-2 mt-6;
+  }
+
+  .legal-content ul {
+    @apply list-disc pl-6 mb-4 text-fog;
+  }
+
+  .legal-content ul li {
+    @apply mb-2 pl-1;
+  }
+
+  .legal-content a {
+    @apply text-gold underline underline-offset-2;
+  }
+
+  .legal-content a:hover {
+    @apply text-gold-light;
+  }
+
+  .legal-content strong {
+    @apply text-white font-medium;
+  }
+
   /* Dark charcoal full-bleed sections — alternating panel rhythm (Privios-style, no light/cream sections) */
   .section-light {
     background: var(--color-ink-soft);
@@ -1691,6 +1741,16 @@
 
   .footer-credit:hover .footer-credit-logo {
     opacity: 1;
+  }
+
+  .footer-legal-line a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .footer-legal-line a:hover {
+    color: var(--color-gold-light);
   }
 
   /* Animacije pri skrolanju */

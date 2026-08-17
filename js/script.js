@@ -1,4 +1,4 @@
-var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html'];
+var PAGE_FILES = ['index.html', 'o-nama.html', 'vina.html', 'kontakt.html', 'politika-privatnosti.html', 'uvjeti-koristenja.html'];
 var wineTickerInterval = null;
 var quoteInterval = null;
 var photoStackTimers = [];
