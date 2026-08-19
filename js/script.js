@@ -91,7 +91,7 @@ function initPage() {
   var wineTicker = document.getElementById('wine-ticker-text');
   if (wineTicker) {
     var wineNames = [
-      'Graševina', 'Premium Graševina', 'Rizvanac', 'Manzoni', 'Johaniter', 'Hibernal',
+      'Graševina', 'Premium Graševina', 'Rizvanac', 'Manzoni', 'Johanniter', 'Hibernal',
       'Chardonnay', 'Sauvignon', 'Mirisni Traminac', 'Vetovo Cuvée', 'Merlot',
       'Mystique', 'Rosé', 'Lumina Brut'
     ];
