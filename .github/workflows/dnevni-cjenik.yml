@@ -1,0 +1,32 @@
+name: Dnevni cjenik (sidrena cijena)
+
+on:
+  schedule:
+    # 05:30 UTC, radnim danom = uvijek prije 8:00 po hrvatskom vremenu (CET/CEST)
+    - cron: '30 5 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  generiraj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generiraj CSV cjenik
+        run: node scripts/generiraj-cjenik.mjs
+
+      - name: Commit i push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cjenik-arhiva/ cjenik-proizvoda.csv data/pohrana-brojac.json
+          git diff --cached --quiet && echo "Nema promjena" && exit 0
+          git commit -m "Dnevna objava cjenika ($(date -u +%Y-%m-%d))"
+          git push
