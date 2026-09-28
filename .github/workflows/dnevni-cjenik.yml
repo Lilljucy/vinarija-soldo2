@@ -4,6 +4,9 @@ on:
   schedule:
     # 04:17 UTC = 05:17 CET / 06:17 CEST, radnim danom; ~1h45 margine do roka 8:00 (GitHub zna kasniti)
     - cron: '17 4 * * 1-5'
+  push:
+    paths:
+      - 'data/cjenik-proizvoda.json'
   workflow_dispatch: {}
 
 permissions:
@@ -23,6 +26,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Primijeni cijene iz JSON-a na stranice (hr/en/de)
+        run: node scripts/primijeni-cijene.mjs
+
       - name: Generiraj CSV cjenik
         run: node scripts/generiraj-cjenik.mjs
 
@@ -30,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cjenik-arhiva/ cjenik-proizvoda.csv data/pohrana-brojac.json
+          git add cjenik-arhiva/ cjenik-proizvoda.csv data/pohrana-brojac.json vina.html en/vina.html de/vina.html
           git diff --cached --quiet && echo "Nema promjena" && exit 0
           git commit -m "Dnevna objava cjenika ($(date -u +%Y-%m-%d))"
           git push
