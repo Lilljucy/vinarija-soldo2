@@ -11,7 +11,7 @@ const DATA_FILE = join(ROOT, 'data', 'cjenik-proizvoda.json');
 const COUNTER_FILE = join(ROOT, 'data', 'pohrana-brojac.json');
 const ARHIVA_DIR = join(ROOT, 'cjenik-arhiva');
 const TRENUTNI_CSV = join(ROOT, 'cjenik-proizvoda.csv');
-const ARHIVA_INDEX = join(ARHIVA_DIR, 'index.json');
+const ARHIVA_INDEX = join(ARHIVA_DIR, 'index.xml');
 const ZADRZI_DANA = 30;
 
 const podaci = JSON.parse(readFileSync(DATA_FILE, 'utf8'));
@@ -77,7 +77,7 @@ writeFileSync(COUNTER_FILE, JSON.stringify(brojac), 'utf8');
 const granica = Date.now() - ZADRZI_DANA * 24 * 60 * 60 * 1000;
 const zadrzani = [];
 for (const f of readdirSync(ARHIVA_DIR)) {
-  if (f === 'index.json') continue;
+  if (f === 'index.xml') continue;
   const match = f.match(/_(\d{8})_(\d{4})\.csv$/);
   if (!match) continue;
   const [, d, t] = match;
@@ -89,6 +89,14 @@ for (const f of readdirSync(ARHIVA_DIR)) {
   }
 }
 zadrzani.sort().reverse();
-writeFileSync(ARHIVA_INDEX, JSON.stringify({ azurirano: sada.toISOString(), datoteke: zadrzani }, null, 2), 'utf8');
+const xmlEsc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const xml = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  `<arhiva azurirano="${sada.toISOString()}">`,
+  ...zadrzani.map((f) => `  <datoteka>${xmlEsc(f)}</datoteka>`),
+  '</arhiva>',
+  '',
+].join('\n');
+writeFileSync(ARHIVA_INDEX, xml, 'utf8');
 
 console.log(`Generiran cjenik: ${nazivDatoteke} (${proizvodi.length} proizvoda)`);
