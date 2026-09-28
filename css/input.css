@@ -1198,8 +1198,12 @@
     @apply flex justify-between gap-3 text-[0.85rem] text-fog py-[3px];
   }
 
-  .wine-card .price-list li span:last-child {
-    @apply text-gold-light font-bold whitespace-nowrap;
+  .wine-card .price-list li > span:last-child {
+    @apply text-gold-light font-bold whitespace-nowrap flex flex-col items-end;
+  }
+
+  .wine-card .price-list .anchor-price {
+    @apply text-[0.62rem] font-normal text-fog whitespace-nowrap;
   }
 
   .wine-card .wine-price {
