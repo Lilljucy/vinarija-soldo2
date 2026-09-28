@@ -1203,7 +1203,7 @@
   }
 
   .wine-card .price-list .anchor-price {
-    @apply text-[0.62rem] font-normal text-fog whitespace-nowrap;
+    @apply text-[0.62rem] font-normal text-fog whitespace-normal text-right;
   }
 
   .wine-card .wine-price {
