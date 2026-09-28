@@ -44,9 +44,9 @@ const escapeCsv = (v) => {
 };
 
 const zaglavlje = [
-  'Naziv proizvoda', 'Šifra', 'Marka', 'Jedinica mjere', 'Cijena za jedinicu mjere',
-  'Maloprodajna cijena', 'Poseban oblik prodaje (DA/NE)', 'Naziv posebnog oblika prodaje',
-  `Sidrena cijena (${sidreniDatum})`, 'Barkod', 'Dostupnost',
+  'Naziv proizvoda', 'Šifra', 'Marka', 'Jedinica mjere', 'Cijena za jedinicu mjere + PDV',
+  'Maloprodajna cijena + PDV', 'Poseban oblik prodaje (DA/NE)', 'Naziv posebnog oblika prodaje',
+  `Sidrena cijena (${sidreniDatum}) + PDV`, 'Barkod', 'Dostupnost',
 ];
 
 const redovi = proizvodi.map((p) => {
