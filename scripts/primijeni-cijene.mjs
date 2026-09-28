@@ -19,20 +19,20 @@ const JEZICI = [
   {
     datoteka: 'vina.html',
     oznake: { '1l': '1 L', rinfuza: 'Rinfuza', '075-navoj': '0,75 L (navoj)', '075-pluto': '0,75 L (pluto)', berba2022: 'Berba 2022.' },
-    glavna: (n) => `${zarez(n)} € + PDV`,
-    sidrena: (n) => `Cijena na ${sidreniDatum}: ${zarez(n)} € + PDV`,
+    glavna: (n) => `${zarez(n)} €`,
+    sidrena: (n) => `Cijena na ${sidreniDatum}: ${zarez(n)} €`,
   },
   {
     datoteka: 'en/vina.html',
     oznake: { '1l': '1 L', rinfuza: 'Bulk', '075-navoj': '0.75 L (screw cap)', '075-pluto': '0.75 L (cork)', berba2022: '2022 Harvest' },
-    glavna: (n) => `€${n.toFixed(2)} + VAT`,
-    sidrena: (n) => `Price on ${datumEn}: €${n.toFixed(2)} + VAT`,
+    glavna: (n) => `€${n.toFixed(2)}`,
+    sidrena: (n) => `Price on ${datumEn}: €${n.toFixed(2)}`,
   },
   {
     datoteka: 'de/vina.html',
     oznake: { '1l': '1 L', rinfuza: 'Offener Wein', '075-navoj': '0,75 L (Schraubverschluss)', '075-pluto': '0,75 L (Korken)', berba2022: 'Jahrgang 2022' },
-    glavna: (n) => `${zarez(n)} € + MwSt.`,
-    sidrena: (n) => `Preis am ${sidreniDatum}: ${zarez(n)} € + MwSt.`,
+    glavna: (n) => `${zarez(n)} €`,
+    sidrena: (n) => `Preis am ${sidreniDatum}: ${zarez(n)} €`,
   },
 ];
 

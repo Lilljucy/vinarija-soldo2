@@ -1,5 +1,5 @@
 {
-  "_napomena": "JEDINI izvor cijena. Mijenjaš samo ovdje (mpc = trenutna cijena bez PDV-a, sidrenaCijena = cijena na 10.9.2026., ne diraj). Iz ovoga se automatski ispisuju vina.html (hr/en/de) i dnevni CSV cjenik (Odluka NN 101/2026).",
+  "_napomena": "JEDINI izvor cijena; SVE CIJENE SU S PDV-om (25%). Mijenjaš samo mpc (trenutna cijena). sidrenaCijena = cijena na 10.9.2026., ne diraj. Iz ovoga se automatski ispisuju vina.html (hr/en/de) i dnevni XML cjenik (Odluka NN 101/2026).",
   "subjekt": {
     "naziv": "OPG Vina Soldo",
     "marka": "OPG Vina Soldo",
@@ -9,23 +9,23 @@
   },
   "sidreniDatum": "10.9.2026.",
   "proizvodi": [
-    { "vino": "grasevina", "pakiranje": "1l", "sifra": "grasevina-1l", "naziv": "Graševina 1 L", "jedinicaMjere": "L", "kolicina": 1, "mpc": 4.50, "sidrenaCijena": 4.50, "dostupno": true },
-    { "vino": "grasevina", "pakiranje": "rinfuza", "sifra": "grasevina-rinfuza", "naziv": "Graševina rinfuza", "jedinicaMjere": "L", "kolicina": 1, "mpc": 3.50, "sidrenaCijena": 3.50, "dostupno": true },
-    { "vino": "grasevina", "pakiranje": "075-navoj", "sifra": "grasevina-075l", "naziv": "Graševina 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 5.00, "sidrenaCijena": 5.00, "dostupno": true },
-    { "vino": "premium-grasevina", "pakiranje": "075-pluto", "sifra": "premium-grasevina-075l", "naziv": "Premium Graševina 0,75 L (pluto)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.00, "sidrenaCijena": 8.00, "dostupno": true },
-    { "vino": "rizvanac", "pakiranje": "075-navoj", "sifra": "rizvanac-075l", "naziv": "Rizvanac 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 5.00, "sidrenaCijena": 5.00, "dostupno": true },
-    { "vino": "manzoni", "pakiranje": "075-navoj", "sifra": "manzoni-075l", "naziv": "Manzoni 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.00, "sidrenaCijena": 6.00, "dostupno": true },
-    { "vino": "johaniter", "pakiranje": "075-navoj", "sifra": "johaniter-075l", "naziv": "Johanniter 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.00, "sidrenaCijena": 6.00, "dostupno": true },
-    { "vino": "hibernal", "pakiranje": "075-navoj", "sifra": "hibernal-075l", "naziv": "Hibernal 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.00, "sidrenaCijena": 8.00, "dostupno": true },
-    { "vino": "chardonnay", "pakiranje": "075-navoj", "sifra": "chardonnay-075l", "naziv": "Chardonnay 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.00, "sidrenaCijena": 6.00, "dostupno": true },
-    { "vino": "sauvignon", "pakiranje": "075-navoj", "sifra": "sauvignon-075l", "naziv": "Sauvignon 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.00, "sidrenaCijena": 8.00, "dostupno": true },
-    { "vino": "mirisni-traminac", "pakiranje": "075-navoj", "sifra": "mirisni-traminac-075l", "naziv": "Mirisni Traminac 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.00, "sidrenaCijena": 7.00, "dostupno": true },
-    { "vino": "vetovo-cuvee", "pakiranje": "1l", "sifra": "vetovo-cuvee-1l", "naziv": "Vetovo Cuvée 1 L", "jedinicaMjere": "L", "kolicina": 1, "mpc": 4.50, "sidrenaCijena": 4.50, "dostupno": true },
-    { "vino": "vetovo-cuvee", "pakiranje": "rinfuza", "sifra": "vetovo-cuvee-rinfuza", "naziv": "Vetovo Cuvée rinfuza", "jedinicaMjere": "L", "kolicina": 1, "mpc": 3.50, "sidrenaCijena": 3.50, "dostupno": true },
-    { "vino": "vetovo-cuvee", "pakiranje": "075-navoj", "sifra": "vetovo-cuvee-075l", "naziv": "Vetovo Cuvée 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 5.00, "sidrenaCijena": 5.00, "dostupno": true },
-    { "vino": "merlot", "pakiranje": "075-navoj", "sifra": "merlot-075l", "naziv": "Merlot 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.00, "sidrenaCijena": 7.00, "dostupno": true },
-    { "vino": "mystique", "pakiranje": "075-navoj", "sifra": "mystique-075l", "naziv": "Mystique 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.00, "sidrenaCijena": 8.00, "dostupno": true },
-    { "vino": "rose", "pakiranje": "075-navoj", "sifra": "rose-075l", "naziv": "Rosé 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.00, "sidrenaCijena": 6.00, "dostupno": true },
-    { "vino": "lumina-brut", "pakiranje": "berba2022", "sifra": "lumina-brut-075l", "naziv": "Lumina Brut 0,75 L (Berba 2022.)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 15.00, "sidrenaCijena": 15.00, "dostupno": true }
+    { "vino": "grasevina", "pakiranje": "1l", "sifra": "grasevina-1l", "naziv": "Graševina 1 L", "jedinicaMjere": "L", "kolicina": 1, "mpc": 5.63, "sidrenaCijena": 5.63, "dostupno": true },
+    { "vino": "grasevina", "pakiranje": "rinfuza", "sifra": "grasevina-rinfuza", "naziv": "Graševina rinfuza", "jedinicaMjere": "L", "kolicina": 1, "mpc": 4.38, "sidrenaCijena": 4.38, "dostupno": true },
+    { "vino": "grasevina", "pakiranje": "075-navoj", "sifra": "grasevina-075l", "naziv": "Graševina 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.25, "sidrenaCijena": 6.25, "dostupno": true },
+    { "vino": "premium-grasevina", "pakiranje": "075-pluto", "sifra": "premium-grasevina-075l", "naziv": "Premium Graševina 0,75 L (pluto)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 10.00, "sidrenaCijena": 10.00, "dostupno": true },
+    { "vino": "rizvanac", "pakiranje": "075-navoj", "sifra": "rizvanac-075l", "naziv": "Rizvanac 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.25, "sidrenaCijena": 6.25, "dostupno": true },
+    { "vino": "manzoni", "pakiranje": "075-navoj", "sifra": "manzoni-075l", "naziv": "Manzoni 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.50, "sidrenaCijena": 7.50, "dostupno": true },
+    { "vino": "johaniter", "pakiranje": "075-navoj", "sifra": "johaniter-075l", "naziv": "Johanniter 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.50, "sidrenaCijena": 7.50, "dostupno": true },
+    { "vino": "hibernal", "pakiranje": "075-navoj", "sifra": "hibernal-075l", "naziv": "Hibernal 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 10.00, "sidrenaCijena": 10.00, "dostupno": true },
+    { "vino": "chardonnay", "pakiranje": "075-navoj", "sifra": "chardonnay-075l", "naziv": "Chardonnay 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.50, "sidrenaCijena": 7.50, "dostupno": true },
+    { "vino": "sauvignon", "pakiranje": "075-navoj", "sifra": "sauvignon-075l", "naziv": "Sauvignon 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 10.00, "sidrenaCijena": 10.00, "dostupno": true },
+    { "vino": "mirisni-traminac", "pakiranje": "075-navoj", "sifra": "mirisni-traminac-075l", "naziv": "Mirisni Traminac 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.75, "sidrenaCijena": 8.75, "dostupno": true },
+    { "vino": "vetovo-cuvee", "pakiranje": "1l", "sifra": "vetovo-cuvee-1l", "naziv": "Vetovo Cuvée 1 L", "jedinicaMjere": "L", "kolicina": 1, "mpc": 5.63, "sidrenaCijena": 5.63, "dostupno": true },
+    { "vino": "vetovo-cuvee", "pakiranje": "rinfuza", "sifra": "vetovo-cuvee-rinfuza", "naziv": "Vetovo Cuvée rinfuza", "jedinicaMjere": "L", "kolicina": 1, "mpc": 4.38, "sidrenaCijena": 4.38, "dostupno": true },
+    { "vino": "vetovo-cuvee", "pakiranje": "075-navoj", "sifra": "vetovo-cuvee-075l", "naziv": "Vetovo Cuvée 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 6.25, "sidrenaCijena": 6.25, "dostupno": true },
+    { "vino": "merlot", "pakiranje": "075-navoj", "sifra": "merlot-075l", "naziv": "Merlot 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 8.75, "sidrenaCijena": 8.75, "dostupno": true },
+    { "vino": "mystique", "pakiranje": "075-navoj", "sifra": "mystique-075l", "naziv": "Mystique 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 10.00, "sidrenaCijena": 10.00, "dostupno": true },
+    { "vino": "rose", "pakiranje": "075-navoj", "sifra": "rose-075l", "naziv": "Rosé 0,75 L (navoj)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 7.50, "sidrenaCijena": 7.50, "dostupno": true },
+    { "vino": "lumina-brut", "pakiranje": "berba2022", "sifra": "lumina-brut-075l", "naziv": "Lumina Brut 0,75 L (Berba 2022.)", "jedinicaMjere": "L", "kolicina": 0.75, "mpc": 18.75, "sidrenaCijena": 18.75, "dostupno": true }
   ]
 }

@@ -43,7 +43,7 @@ const tag = (ime, vrijednost, atributi = '') => {
   const v = vrijednost === '' || vrijednost == null ? '' : xmlEsc(vrijednost);
   return v === '' && !atributi ? `<${ime}/>` : `<${ime}${atributi}>${v}</${ime}>`;
 };
-const cijenaAtr = ' valuta="EUR" pdv="+PDV"';
+const cijenaAtr = ' valuta="EUR" pdv="ukljucen"';
 
 const stavke = proizvodi.map((p) => {
   const cijenaPoJedinici = p.kolicina ? broj(p.mpc / p.kolicina) : '';
