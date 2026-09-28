@@ -1,0 +1,19 @@
+﻿Naziv proizvoda,Šifra,Marka,Jedinica mjere,Cijena za jedinicu mjere + PDV,Maloprodajna cijena + PDV,Poseban oblik prodaje (DA/NE),Naziv posebnog oblika prodaje,Sidrena cijena (10.9.2026.) + PDV,Barkod,Dostupnost
+Graševina 1 L,grasevina-1l,OPG Vina Soldo,L,4.50,4.50,NE,,4.50,,dostupno
+Graševina rinfuza,grasevina-rinfuza,OPG Vina Soldo,L,3.50,3.50,NE,,3.50,,dostupno
+"Graševina 0,75 L (navoj)",grasevina-075l,OPG Vina Soldo,L,6.67,5.00,NE,,5.00,,dostupno
+"Premium Graševina 0,75 L (pluto)",premium-grasevina-075l,OPG Vina Soldo,L,10.67,8.00,NE,,8.00,,dostupno
+"Rizvanac 0,75 L (navoj)",rizvanac-075l,OPG Vina Soldo,L,6.67,5.00,NE,,5.00,,dostupno
+"Manzoni 0,75 L (navoj)",manzoni-075l,OPG Vina Soldo,L,8.00,6.00,NE,,6.00,,dostupno
+"Johanniter 0,75 L (navoj)",johaniter-075l,OPG Vina Soldo,L,8.00,6.00,NE,,6.00,,dostupno
+"Hibernal 0,75 L (navoj)",hibernal-075l,OPG Vina Soldo,L,10.67,8.00,NE,,8.00,,dostupno
+"Chardonnay 0,75 L (navoj)",chardonnay-075l,OPG Vina Soldo,L,8.00,6.00,NE,,6.00,,dostupno
+"Sauvignon 0,75 L (navoj)",sauvignon-075l,OPG Vina Soldo,L,10.67,8.00,NE,,8.00,,dostupno
+"Mirisni Traminac 0,75 L (navoj)",mirisni-traminac-075l,OPG Vina Soldo,L,9.33,7.00,NE,,7.00,,dostupno
+Vetovo Cuvée 1 L,vetovo-cuvee-1l,OPG Vina Soldo,L,4.50,4.50,NE,,4.50,,dostupno
+Vetovo Cuvée rinfuza,vetovo-cuvee-rinfuza,OPG Vina Soldo,L,3.50,3.50,NE,,3.50,,dostupno
+"Vetovo Cuvée 0,75 L (navoj)",vetovo-cuvee-075l,OPG Vina Soldo,L,6.67,5.00,NE,,5.00,,dostupno
+"Merlot 0,75 L (navoj)",merlot-075l,OPG Vina Soldo,L,9.33,7.00,NE,,7.00,,dostupno
+"Mystique 0,75 L (navoj)",mystique-075l,OPG Vina Soldo,L,10.67,8.00,NE,,8.00,,dostupno
+"Rosé 0,75 L (navoj)",rose-075l,OPG Vina Soldo,L,8.00,6.00,NE,,6.00,,dostupno
+"Lumina Brut 0,75 L (Berba 2022.)",lumina-brut-075l,OPG Vina Soldo,L,20.00,15.00,NE,,15.00,,dostupno
