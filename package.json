@@ -10,8 +10,7 @@
   },
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/style.css --minify",
-    "watch:css": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
-    "cijene": "node scripts/primijeni-cijene.mjs && node scripts/generiraj-cjenik.mjs"
+    "watch:css": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
   },
   "repository": {
     "type": "git",
