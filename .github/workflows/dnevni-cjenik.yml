@@ -1,4 +1,4 @@
-name: Dnevni cjenik (sidrena cijena)
+name: Objava cjenika (sidrena cijena)
 
 on:
   schedule:
